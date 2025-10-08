@@ -1,12 +1,23 @@
+require("dotenv").config();
 const express = require("express");
-const fs = require("fs");
 const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const axios = require("axios");
 
 const app = express();
 const PORT = 3000;
-const DATA_FILE = path.join(__dirname, "university_info.json");
+
+// GitHub Configuration
+const GITHUB_OWNER = "Devsfong";
+const GITHUB_REPO = "test_json";
+const FILE_PATH = "university_info.json";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Ensure this is set in your environment
+
+if (!GITHUB_TOKEN) {
+  console.error("Error: GITHUB_TOKEN is not set in the environment variables.");
+  process.exit(1);
+}
 
 // Middleware
 app.use(bodyParser.json());
@@ -26,17 +37,51 @@ const ADMIN_CREDENTIALS = {
   password: "123",
 };
 
-// Load university data from JSON file
-function loadData() {
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify({}));
+// Helper function to get file content
+async function getFileContent() {
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${FILE_PATH}`;
+  const headers = { Authorization: `Bearer ${GITHUB_TOKEN}` };
+
+  try {
+    const response = await axios.get(url, { headers });
+    const content = Buffer.from(response.data.content, "base64").toString(
+      "utf-8"
+    );
+    return { content, sha: response.data.sha };
+  } catch (error) {
+    console.error("Error fetching file:", error.response.data);
+    throw error;
   }
-  return JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
 }
 
-// Save university data to JSON file
-function saveData(data) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 4));
+// Helper function to update file content
+async function updateFileContent(newContent, sha) {
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${FILE_PATH}`;
+  const headers = { Authorization: `Bearer ${GITHUB_TOKEN}` };
+  const data = {
+    message: "Update university_info.json",
+    content: Buffer.from(newContent).toString("base64"),
+    sha,
+  };
+
+  try {
+    await axios.put(url, data, { headers });
+  } catch (error) {
+    console.error("Error updating file:", error.response.data);
+    throw error;
+  }
+}
+
+// Load university data from GitHub
+async function loadData() {
+  const { content } = await getFileContent();
+  return JSON.parse(content);
+}
+
+// Save university data to GitHub
+async function saveData(data) {
+  const { sha } = await getFileContent();
+  await updateFileContent(JSON.stringify(data, null, 4), sha);
 }
 
 // Routes
@@ -61,13 +106,13 @@ app.post("/logout", (req, res) => {
 });
 
 // Get all programs (user view)
-app.get("/programs", (req, res) => {
-  const data = loadData();
+app.get("/programs", async (req, res) => {
+  const data = await loadData();
   res.json(data);
 });
 
 // Add a new program (admin only)
-app.post("/admin/programs", (req, res) => {
+app.post("/admin/programs", async (req, res) => {
   if (!req.session.admin) {
     return res.status(403).json({ error: "Unauthorized" });
   }
@@ -94,7 +139,7 @@ app.post("/admin/programs", (req, res) => {
     return res.status(400).json({ error: "All fields are required" });
   }
 
-  const data = loadData();
+  const data = await loadData();
   if (!data[major]) {
     data[major] = [];
   }
@@ -108,12 +153,12 @@ app.post("/admin/programs", (req, res) => {
     contact,
   });
 
-  saveData(data);
+  await saveData(data);
   res.json({ message: "Program added successfully" });
 });
 
 // Update an existing program (admin only)
-app.put("/admin/programs", (req, res) => {
+app.put("/admin/programs", async (req, res) => {
   if (!req.session.admin) {
     return res.status(403).json({ error: "Unauthorized" });
   }
@@ -140,7 +185,7 @@ app.put("/admin/programs", (req, res) => {
     return res.status(400).json({ error: "All fields are required" });
   }
 
-  const data = loadData();
+  const data = await loadData();
 
   if (!data[major]) {
     return res.status(404).json({ error: "Major not found" });
@@ -163,12 +208,12 @@ app.put("/admin/programs", (req, res) => {
     contact,
   };
 
-  saveData(data);
+  await saveData(data);
   res.json({ message: "Program updated successfully" });
 });
 
 // Delete a program (admin only)
-app.delete("/admin/programs", (req, res) => {
+app.delete("/admin/programs", async (req, res) => {
   if (!req.session.admin) {
     return res.status(403).json({ error: "Unauthorized" });
   }
@@ -179,7 +224,7 @@ app.delete("/admin/programs", (req, res) => {
     return res.status(400).json({ error: "Major and university are required" });
   }
 
-  const data = loadData();
+  const data = await loadData();
 
   if (!data[major]) {
     return res.status(404).json({ error: "Major not found" });
@@ -187,7 +232,7 @@ app.delete("/admin/programs", (req, res) => {
 
   data[major] = data[major].filter((p) => p.university !== university);
 
-  saveData(data);
+  await saveData(data);
   res.json({ message: "Program deleted successfully" });
 });
 
