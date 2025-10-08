@@ -1,14 +1,6 @@
 {
     "Computer Science": [
         {
-            "university": "Norton University",
-            "curriculum": "Programming, Networks, Database Systems, Cybersecurity",
-            "duration": "4 years",
-            "tuition": "$950/semester",
-            "location": "Phnom Penh",
-            "contact": "info@norton.edu.kh, +85523456789"
-        },
-        {
             "university": "Institute of Technology of Cambodia (ITC)",
             "curriculum": "Advanced Programming, Computer Architecture, Operating Systems",
             "duration": "5 years",
