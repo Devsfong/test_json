@@ -13,13 +13,36 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 24px;
-            gap: 16px;
-            width: 830px;
-            background: #FFFFFF;
-            border: 1px solid #D6DDEB;
+            padding: 16px;
+            gap: 12px;
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            /* Simple semi-transparent background */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* Subtle border */
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Light shadow */
             overflow: hidden;
+            transition: backdrop-filter 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+            /* Smooth transition for hover effect */
+        }
+
+        .card:hover {
+            background: rgba(173, 216, 230, 0.3);
+            /* Light blue background on hover */
+            backdrop-filter: blur(25px);
+            /* Apply blur effect on hover */
+            opacity: 1;
+            /* Ensure the hovered card is fully visible */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Enhance shadow on hover */
+        }
+
+        #cards-container .card:not(:hover) {
+            opacity: 1;
+            /* Keep all cards fully visible when not hovering */
         }
 
         .card-content {
@@ -30,6 +53,18 @@
             max-height: 100px;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        .see-more {
+            align-self: flex-end;
+            margin-top: auto;
+        }
+
+        #cards-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
     </style>
 </head>
