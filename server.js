@@ -12,7 +12,7 @@ const PORT = 3000;
 const GITHUB_OWNER = "Devsfong";
 const GITHUB_REPO = "test_json";
 const FILE_PATH = "university_info.json";
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Ensure this is set in your environment
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 if (!GITHUB_TOKEN) {
   console.error("Error: GITHUB_TOKEN is not set in the environment variables.");
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(
   session({
-    secret: "your_secret_key",
+    secret: process.env.SESSION_SECRET || "default-secret-key",
     resave: false,
     saveUninitialized: true,
   })
@@ -49,7 +49,10 @@ async function getFileContent() {
     );
     return { content, sha: response.data.sha };
   } catch (error) {
-    console.error("Error fetching file:", error.response.data);
+    console.error(
+      "Error fetching file:",
+      error.response?.data || error.message
+    );
     throw error;
   }
 }
@@ -67,7 +70,10 @@ async function updateFileContent(newContent, sha) {
   try {
     await axios.put(url, data, { headers });
   } catch (error) {
-    console.error("Error updating file:", error.response.data);
+    console.error(
+      "Error updating file:",
+      error.response?.data || error.message
+    );
     throw error;
   }
 }
@@ -107,8 +113,12 @@ app.post("/logout", (req, res) => {
 
 // Get all programs (user view)
 app.get("/programs", async (req, res) => {
-  const data = await loadData();
-  res.json(data);
+  try {
+    const data = await loadData();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to load programs" });
+  }
 });
 
 // Add a new program (admin only)
@@ -139,22 +149,25 @@ app.post("/admin/programs", async (req, res) => {
     return res.status(400).json({ error: "All fields are required" });
   }
 
-  const data = await loadData();
-  if (!data[major]) {
-    data[major] = [];
+  try {
+    const data = await loadData();
+    if (!data[major]) {
+      data[major] = [];
+    }
+
+    data[major].push({
+      university,
+      curriculum,
+      duration,
+      tuition,
+      location,
+      contact,
+    });
+    await saveData(data);
+    res.json({ message: "Program added successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to add program" });
   }
-
-  data[major].push({
-    university,
-    curriculum,
-    duration,
-    tuition,
-    location,
-    contact,
-  });
-
-  await saveData(data);
-  res.json({ message: "Program added successfully" });
 });
 
 // Update an existing program (admin only)
@@ -185,31 +198,34 @@ app.put("/admin/programs", async (req, res) => {
     return res.status(400).json({ error: "All fields are required" });
   }
 
-  const data = await loadData();
+  try {
+    const data = await loadData();
 
-  if (!data[major]) {
-    return res.status(404).json({ error: "Major not found" });
+    if (!data[major]) {
+      return res.status(404).json({ error: "Major not found" });
+    }
+
+    const programIndex = data[major].findIndex(
+      (p) => p.university === university
+    );
+
+    if (programIndex === -1) {
+      return res.status(404).json({ error: "Program not found" });
+    }
+
+    data[major][programIndex] = {
+      university,
+      curriculum,
+      duration,
+      tuition,
+      location,
+      contact,
+    };
+    await saveData(data);
+    res.json({ message: "Program updated successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to update program" });
   }
-
-  const programIndex = data[major].findIndex(
-    (p) => p.university === university
-  );
-
-  if (programIndex === -1) {
-    return res.status(404).json({ error: "Program not found" });
-  }
-
-  data[major][programIndex] = {
-    university,
-    curriculum,
-    duration,
-    tuition,
-    location,
-    contact,
-  };
-
-  await saveData(data);
-  res.json({ message: "Program updated successfully" });
 });
 
 // Delete a program (admin only)
@@ -224,16 +240,19 @@ app.delete("/admin/programs", async (req, res) => {
     return res.status(400).json({ error: "Major and university are required" });
   }
 
-  const data = await loadData();
+  try {
+    const data = await loadData();
 
-  if (!data[major]) {
-    return res.status(404).json({ error: "Major not found" });
+    if (!data[major]) {
+      return res.status(404).json({ error: "Major not found" });
+    }
+
+    data[major] = data[major].filter((p) => p.university !== university);
+    await saveData(data);
+    res.json({ message: "Program deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to delete program" });
   }
-
-  data[major] = data[major].filter((p) => p.university !== university);
-
-  await saveData(data);
-  res.json({ message: "Program deleted successfully" });
 });
 
 // Serve frontend

@@ -2,7 +2,5 @@ services:
   - type: web
     name: university-api
     env: node
-    branch: main
-    buildCommand: npm install
-    startCommand: npm start
-    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
