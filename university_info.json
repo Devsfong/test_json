@@ -1,14 +1,6 @@
 {
     "Computer Science": [
         {
-            "university": "Royal University of Phnom Penh",
-            "curriculum": "Intro to CS, Algorithms, Databases, Software Engineering, AI",
-            "duration": "4 years",
-            "tuition": "$500/semester",
-            "location": "Phnom Penh",
-            "contact": "info@rupp.edu.kh, +85512345678"
-        },
-        {
             "university": "Pannasastra University",
             "curriculum": "CS Foundations, Data Structures, Web Development, Mobile Apps",
             "duration": "4 years",
@@ -39,6 +31,14 @@
             "tuition": "$1,000/semester",
             "location": "Phnom Penh",
             "contact": "info@zaman.edu.kh, +85570321456"
+        },
+        {
+            "university": "New University",
+            "curriculum": "Artificial Intelligence, Machine Learning, Cloud Computing",
+            "duration": "4 years",
+            "tuition": "$1,500/semester",
+            "location": "Phnom Penh",
+            "contact": "info@newuniversity.edu.kh, +85512345678"
         }
     ],
     "Business Administration": [
@@ -141,6 +141,14 @@
             "tuition": "1290",
             "location": "3j139u03uu01",
             "contact": "929010938101"
+        },
+        {
+            "university": "1",
+            "curriculum": "1",
+            "duration": "1",
+            "tuition": "1",
+            "location": "1",
+            "contact": "1"
         }
     ]
 }
