@@ -1,0 +1,136 @@
+{
+  "Computer Science": [
+    {
+      "university": "Royal University of Phnom Penh",
+      "curriculum": "Intro to CS, Algorithms, Databases, Software Engineering, AI",
+      "duration": "4 years",
+      "tuition": "$500/semester",
+      "location": "Phnom Penh",
+      "contact": "info@rupp.edu.kh, +85512345678"
+    },
+    {
+      "university": "Pannasastra University",
+      "curriculum": "CS Foundations, Data Structures, Web Development, Mobile Apps",
+      "duration": "4 years",
+      "tuition": "$1,200/semester",
+      "location": "Phnom Penh",
+      "contact": "info@psu.edu.kh, +85598765432"
+    },
+    {
+      "university": "Norton University",
+      "curriculum": "Programming, Networks, Database Systems, Cybersecurity",
+      "duration": "4 years",
+      "tuition": "$950/semester",
+      "location": "Phnom Penh",
+      "contact": "info@norton.edu.kh, +85523456789"
+    },
+    {
+      "university": "Institute of Technology of Cambodia (ITC)",
+      "curriculum": "Advanced Programming, Computer Architecture, Operating Systems",
+      "duration": "5 years",
+      "tuition": "$400/semester",
+      "location": "Phnom Penh",
+      "contact": "info@itc.edu.kh, +85523880381"
+    },
+    {
+      "university": "Zaman University",
+      "curriculum": "Software Development, Information Systems, IT Management",
+      "duration": "4 years",
+      "tuition": "$1,000/semester",
+      "location": "Phnom Penh",
+      "contact": "info@zaman.edu.kh, +85570321456"
+    }
+  ],
+  "Business Administration": [
+    {
+      "university": "Pannasastra University",
+      "curriculum": "Accounting, Marketing, Strategy, International Business",
+      "duration": "4 years",
+      "tuition": "$1,200/semester",
+      "location": "Phnom Penh",
+      "contact": "info@psu.edu.kh, +85598765432"
+    },
+    {
+      "university": "University of Cambodia",
+      "curriculum": "Business Management, Finance, Leadership, Entrepreneurship",
+      "duration": "4 years",
+      "tuition": "$800/semester",
+      "location": "Phnom Penh",
+      "contact": "info@uc.edu.kh, +85556789012"
+    },
+    {
+      "university": "Norton University - Bachelor of Business Administration (BBA)",
+      "curriculum": "Foundation: Mathematics, Economics, Computer, Business Law. Core: Marketing, Management, Accounting, Statistics, Entrepreneurship. 6 Specializations: (1) Management - Leadership, Strategic Management, HRM, Project Management, Organizational Behavior, (2) Financial Accounting - Cost Accounting, Auditing, IFRS, Financial Analysis, Taxation, (3) Marketing & Branding - Brand Management, Consumer Behavior, E-Marketing, Sales Strategy, (4) Auditing - Financial Statement Auditing, International Auditing Standards, Operational Auditing, (5) Human Resource Management & Leadership - Labor Law, Training & Development, Conflict Management, Performance Management, (6) Fiscal Revenue & Taxation - Tax Law, Corporate Taxation, Tax Planning, Investment Management",
+      "duration": "4 years (Foundation + 3 years specialization)",
+      "tuition": "$950/semester",
+      "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+      "contact": "info@norton-u.com, +85523432075, +85593888569"
+    },
+    {
+      "university": "Build Bright University",
+      "curriculum": "Business Strategy, Corporate Finance, Marketing Management",
+      "duration": "4 years",
+      "tuition": "$750/semester",
+      "location": "Phnom Penh",
+      "contact": "info@bbu.edu.kh, +85523986666"
+    },
+    {
+      "university": "National University of Management",
+      "curriculum": "Business Administration, Project Management, Supply Chain",
+      "duration": "4 years",
+      "tuition": "$600/semester",
+      "location": "Phnom Penh",
+      "contact": "info@num.edu.kh, +85523880050"
+    },
+    {
+      "university": "Western University",
+      "curriculum": "Business Development, Financial Accounting, Operations Management",
+      "duration": "4 years",
+      "tuition": "$850/semester",
+      "location": "Phnom Penh",
+      "contact": "info@western.edu.kh, +85512876543"
+    },
+    {
+      "university": "CamEd Business School",
+      "curriculum": "Bachelor of Accounting and Finance program accredited for 4 years. Students study comprehensive business curriculum including: Financial Accounting (FA1), Management Accounting (MA1), Introduction to Data Analysis in Business (DAB), Marketing and Behavioral Economics (MBE), Introduction to Computer Science, Leadership (LEAD), Psychology (PSYC), English for Academic Purposes. Program complies with International Federation of Accountants (IFAC) standards, Ministry of Education requirements, and Cambodian National Qualification Framework. Students also earn international CAT (Certified Accounting Technician) qualification and may continue to ACCA qualification. Curriculum includes business fundamentals, analytical skills, leadership development, and professional certifications. Career opportunities in accounting, finance, business management, auditing, and financial analysis sectors.",
+      "duration": "4 years",
+      "tuition": "$2,819-$3,219 per semester (varies by year)",
+      "location": "64 Street 108, Sangkat Wat Phnom, Khan Daun Penh, Phnom Penh",
+      "contact": "Contact via website: cam-ed.edu.kh/contact"
+    }
+  ],
+  "Graphic Design": [
+    {
+      "university": "Pannasastra University",
+      "curriculum": "Digital Art, Visual Design, Typography, UX/UI Design",
+      "duration": "4 years",
+      "tuition": "$1,200/semester",
+      "location": "Phnom Penh",
+      "contact": "info@psu.edu.kh, +85598765432"
+    },
+    {
+      "university": "Norton University",
+      "curriculum": "Graphic Communication, Branding, Motion Graphics, Illustration",
+      "duration": "4 years",
+      "tuition": "$950/semester",
+      "location": "Phnom Penh",
+      "contact": "info@norton.edu.kh, +85523456789"
+    },
+    {
+      "university": "Royal University of Fine Arts",
+      "curriculum": "Visual Arts, Design Fundamentals, Digital Media, Photography",
+      "duration": "4 years",
+      "tuition": "$300/semester",
+      "location": "Phnom Penh",
+      "contact": "info@rufa.edu.kh, +85523986984"
+    },
+    {
+      "university": "Limkokwing University",
+      "curriculum": "Creative Multimedia, Advertising Design, Web Design",
+      "duration": "3 years",
+      "tuition": "$1,400/semester",
+      "location": "Phnom Penh",
+      "contact": "info@limkokwing.edu.kh, +85523991888"
+    }
+  ]
+}
