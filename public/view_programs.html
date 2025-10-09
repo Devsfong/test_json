@@ -4,55 +4,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Programs</title>
+    <title>University Programs</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #8b5cf6;
+            --light-bg: #f8fafc;
+            --dark-bg: #0f172a;
+            --light-card: #ffffff;
+            --dark-card: #1e293b;
+            --light-text: #1e293b;
+            --dark-text: #f1f5f9;
+            --light-border: #e2e8f0;
+            --dark-border: #334155;
+        }
+
+        body {
+            transition: all 0.4s ease;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .light-mode {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        .dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        .card {
+            background-color: var(--light-card);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark-mode .card {
+            background-color: var(--dark-card);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .card-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+        }
+
+        .dark-mode .card-content h2 {
+            color: var(--dark-text);
+        }
+
+        .card-content h2 i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .card-content p {
+            margin-bottom: 12px;
+            display: flex;
+        }
+
+        .card-content strong {
+            min-width: 100px;
+            color: var(--light-text);
+        }
+
+        .dark-mode .card-content strong {
+            color: var(--dark-text);
+        }
+
+        .curriculum {
+            max-height: 80px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(59, 130, 246, 0.05);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .dark-mode .curriculum {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .curriculum::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(transparent, rgba(59, 130, 246, 0.05));
+        }
+
+        .dark-mode .curriculum::after {
+            background: linear-gradient(transparent, rgba(59, 130, 246, 0.1));
+        }
+
+        .see-more {
+            align-self: flex-end;
+            margin-top: auto;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .see-more:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .see-more i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .see-more:hover i {
+            transform: translateX(4px);
+        }
+
+        #cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 24px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dark-mode .subtitle {
+            color: #94a3b8;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--light-card);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dark-mode .theme-toggle {
+            background: var(--dark-card);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(15deg);
+        }
+
+        @media (max-width: 768px) {
+            #cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen">
-    <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold text-center mb-6">University Programs</h1>
-        <div id="programs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!-- Programs will be dynamically loaded here -->
+<body class="light-mode min-h-screen">
+    <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon text-gray-700"></i>
+    </div>
+
+    <div class="container">
+        <h1>University Programs</h1>
+        <p class="subtitle">Discover the perfect academic path for your future career</p>
+        <div id="cards-container">
+            <!-- Cards will be dynamically inserted here -->
         </div>
     </div>
 
     <script>
-        // Fetch and display programs
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        // Apply the saved theme on page load
+        if (currentTheme === 'dark') {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+
+        // Toggle theme when the switch is clicked
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Fetch and display programs - YOUR ORIGINAL SCRIPT
         async function loadPrograms() {
             const response = await fetch('/programs');
             const data = await response.json();
 
-            const container = document.getElementById('programs-container');
-            container.innerHTML = '';
+            const container = document.getElementById('cards-container');
 
             Object.keys(data).forEach((major) => {
-                const majorDiv = document.createElement('div');
-                majorDiv.className = 'bg-white p-4 rounded shadow-md';
-
-                const majorTitle = document.createElement('h3');
-                majorTitle.className = 'text-xl font-bold mb-2';
-                majorTitle.textContent = major;
-
-                const programList = document.createElement('ul');
-                programList.className = 'list-disc pl-6';
-
                 data[major].forEach((program) => {
-                    const programItem = document.createElement('li');
-                    programItem.innerHTML = `
-                        <strong>${program.university}</strong><br>
-                        ${program.curriculum}<br>
-                        Duration: ${program.duration}<br>
-                        Tuition: ${program.tuition}<br>
-                        Location: ${program.location}<br>
-                        Contact: ${program.contact}<br>
+                    const card = document.createElement('div');
+                    card.className = 'card';
+
+                    // Limit curriculum to 4 items
+                    const curriculumItems = program.curriculum.split(', ');
+                    const shortCurriculum = curriculumItems.slice(0, 4).join(', ') + (curriculumItems.length > 4 ? ', ...' : '');
+
+                    card.innerHTML = `
+                        <div class="card-content">
+                            <h2><i class="fas fa-university"></i> ${program.university}</h2>
+                            <p><strong>Program:</strong> ${major}</p>
+                            <p class="curriculum"><strong>Curriculum:</strong> ${shortCurriculum}</p>
+                            <p><strong>Tuition:</strong> ${program.tuition}</p>
+                            <p><strong>Location:</strong> ${program.location}</p>
+                            <p><strong>Contact:</strong> ${program.contact}</p>
+                        </div>
+                        <a href="details.html?program=${encodeURIComponent(major)}&university=${encodeURIComponent(program.university)}" class="see-more">
+                            See More <i class="fas fa-arrow-right"></i>
+                        </a>
                     `;
 
-                    programList.appendChild(programItem);
+                    container.appendChild(card);
                 });
-
-                majorDiv.appendChild(majorTitle);
-                majorDiv.appendChild(programList);
-                container.appendChild(majorDiv);
             });
         }
 

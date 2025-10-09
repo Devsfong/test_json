@@ -6,52 +6,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #8b5cf6;
+            --light-bg: #f8fafc;
+            --dark-bg: #0f172a;
+            --light-card: #ffffff;
+            --dark-card: #1e293b;
+            --light-text: #1e293b;
+            --dark-text: #f1f5f9;
+            --light-border: #e2e8f0;
+            --dark-border: #334155;
+        }
+
+        body {
+            transition: all 0.4s ease;
+        }
+
+        .light-mode {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        .dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        .card {
+            background-color: var(--light-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .card {
+            background-color: var(--dark-card);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-input {
+            background-color: var(--light-card);
+            border: 1px solid var(--light-border);
+            color: var(--light-text);
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode .form-input {
+            background-color: #334155;
+            border: 1px solid var(--dark-border);
+            color: var(--dark-text);
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen">
-    <div class="container mx-auto p-4">
+<body class="light-mode min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold text-center mb-6">Admin Dashboard</h1>
         <button id="logout-button" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Logout</button>
         <div class="mt-6">
             <h2 class="text-2xl font-semibold mb-4">Add New Program</h2>
-            <form id="add-program-form" class="bg-white p-4 rounded shadow-md">
+            <form id="add-program-form" class="card p-4">
                 <div class="mb-4">
                     <label for="major" class="block text-gray-700">Major</label>
-                    <input type="text" id="major" name="major" class="w-full px-3 py-2 border rounded" required>
+                    <input type="text" id="major" name="major" class="form-input w-full px-3 py-2 rounded" required>
                 </div>
                 <div class="mb-4">
                     <label for="university" class="block text-gray-700">University Name</label>
-                    <input type="text" id="university" name="university" class="w-full px-3 py-2 border rounded"
+                    <input type="text" id="university" name="university" class="form-input w-full px-3 py-2 rounded"
                         required>
                 </div>
                 <div class="mb-4">
                     <label for="curriculum" class="block text-gray-700">Curriculum</label>
-                    <textarea id="curriculum" name="curriculum" class="w-full px-3 py-2 border rounded"
+                    <textarea id="curriculum" name="curriculum" class="form-input w-full px-3 py-2 rounded"
                         required></textarea>
                 </div>
                 <div class="mb-4">
                     <label for="duration" class="block text-gray-700">Duration</label>
-                    <input type="text" id="duration" name="duration" class="w-full px-3 py-2 border rounded" required>
+                    <input type="text" id="duration" name="duration" class="form-input w-full px-3 py-2 rounded"
+                        required>
                 </div>
                 <div class="mb-4">
                     <label for="tuition" class="block text-gray-700">Tuition</label>
-                    <input type="text" id="tuition" name="tuition" class="w-full px-3 py-2 border rounded" required>
+                    <input type="text" id="tuition" name="tuition" class="form-input w-full px-3 py-2 rounded" required>
                 </div>
                 <div class="mb-4">
                     <label for="location" class="block text-gray-700">Location</label>
-                    <input type="text" id="location" name="location" class="w-full px-3 py-2 border rounded" required>
+                    <input type="text" id="location" name="location" class="form-input w-full px-3 py-2 rounded"
+                        required>
                 </div>
                 <div class="mb-4">
                     <label for="contact" class="block text-gray-700">Contact</label>
-                    <input type="text" id="contact" name="contact" class="w-full px-3 py-2 border rounded" required>
+                    <input type="text" id="contact" name="contact" class="form-input w-full px-3 py-2 rounded" required>
                 </div>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add
-                    Program</button>
+                <button type="submit" class="btn-primary text-white px-4 py-2 rounded">Add Program</button>
             </form>
         </div>
         <div class="mt-6">
             <h2 class="text-2xl font-semibold mb-4">Existing Programs</h2>
-            <div id="programs-container"></div>
+            <div id="programs-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
         </div>
     </div>
 
@@ -94,34 +189,22 @@
             container.innerHTML = '';
 
             Object.keys(data).forEach((major) => {
-                const majorDiv = document.createElement('div');
-                majorDiv.className = 'mb-4';
-
-                const majorTitle = document.createElement('h3');
-                majorTitle.className = 'text-xl font-bold';
-                majorTitle.textContent = major;
-
-                const programList = document.createElement('ul');
-                programList.className = 'list-disc pl-6';
-
                 data[major].forEach((program) => {
-                    const programItem = document.createElement('li');
-                    programItem.innerHTML = `
-                        <strong>${program.university}</strong><br>
-                        ${program.curriculum}<br>
-                        Duration: ${program.duration}<br>
-                        Tuition: ${program.tuition}<br>
-                        Location: ${program.location}<br>
-                        Contact: ${program.contact}<br>
+                    const programCard = document.createElement('div');
+                    programCard.className = 'card p-4';
+
+                    programCard.innerHTML = `
+                        <h3 class="text-xl font-bold mb-2">${program.university}</h3>
+                        <p class="text-gray-700 mb-2">${program.curriculum}</p>
+                        <p class="text-gray-700 mb-2">Duration: ${program.duration}</p>
+                        <p class="text-gray-700 mb-2">Tuition: ${program.tuition}</p>
+                        <p class="text-gray-700 mb-2">Location: ${program.location}</p>
+                        <p class="text-gray-700 mb-2">Contact: ${program.contact}</p>
                         <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 delete-program" data-major="${major}" data-university="${program.university}">Delete</button>
                     `;
 
-                    programList.appendChild(programItem);
+                    container.appendChild(programCard);
                 });
-
-                majorDiv.appendChild(majorTitle);
-                majorDiv.appendChild(programList);
-                container.appendChild(majorDiv);
             });
 
             // Add delete functionality
