@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #3b82f6;
@@ -19,6 +20,7 @@
             --dark-text: #f1f5f9;
             --light-border: #e2e8f0;
             --dark-border: #334155;
+            --sidebar-width: 250px;
         }
 
         body {
@@ -40,6 +42,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            overflow: hidden;
         }
 
         .dark-mode .card {
@@ -99,58 +102,289 @@
                 transform: rotate(360deg);
             }
         }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            background-color: var(--light-card);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .sidebar {
+            background-color: var(--dark-card);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar.collapsed {
+            width: 70px;
+        }
+
+        .sidebar.collapsed+.main-content {
+            margin-left: 70px;
+        }
+
+        .sidebar.collapsed .sidebar-text {
+            display: none;
+        }
+
+        .program-card {
+            position: relative;
+        }
+
+        .program-card .card-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .program-card:hover .card-actions {
+            opacity: 1;
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .stats-card .icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+            }
+
+            .sidebar .sidebar-text {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 70px;
+            }
+
+            .sidebar.expanded {
+                width: var(--sidebar-width);
+            }
+
+            .sidebar.expanded .sidebar-text {
+                display: block;
+            }
+
+            .sidebar.expanded+.main-content {
+                margin-left: var(--sidebar-width);
+            }
+        }
     </style>
 </head>
 
 <body class="light-mode min-h-screen font-sans">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-center mb-6">Admin Dashboard</h1>
-        <button id="logout-button" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Logout</button>
-        <div class="mt-6">
-            <h2 class="text-2xl font-semibold mb-4">Add New Program</h2>
-            <form id="add-program-form" class="card p-4">
-                <div class="mb-4">
-                    <label for="major" class="block text-gray-700">Major</label>
-                    <input type="text" id="major" name="major" class="form-input w-full px-3 py-2 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="university" class="block text-gray-700">University Name</label>
-                    <input type="text" id="university" name="university" class="form-input w-full px-3 py-2 rounded"
-                        required>
-                </div>
-                <div class="mb-4">
-                    <label for="curriculum" class="block text-gray-700">Curriculum</label>
-                    <textarea id="curriculum" name="curriculum" class="form-input w-full px-3 py-2 rounded"
-                        required></textarea>
-                </div>
-                <div class="mb-4">
-                    <label for="duration" class="block text-gray-700">Duration</label>
-                    <input type="text" id="duration" name="duration" class="form-input w-full px-3 py-2 rounded"
-                        required>
-                </div>
-                <div class="mb-4">
-                    <label for="tuition" class="block text-gray-700">Tuition</label>
-                    <input type="text" id="tuition" name="tuition" class="form-input w-full px-3 py-2 rounded" required>
-                </div>
-                <div class="mb-4">
-                    <label for="location" class="block text-gray-700">Location</label>
-                    <input type="text" id="location" name="location" class="form-input w-full px-3 py-2 rounded"
-                        required>
-                </div>
-                <div class="mb-4">
-                    <label for="contact" class="block text-gray-700">Contact</label>
-                    <input type="text" id="contact" name="contact" class="form-input w-full px-3 py-2 rounded" required>
-                </div>
-                <button type="submit" class="btn-primary text-white px-4 py-2 rounded">Add Program</button>
-            </form>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-700">
+            <div class="flex items-center">
+                <i class="fas fa-graduation-cap text-xl text-blue-500 mr-2"></i>
+                <span class="sidebar-text font-bold text-lg">EduAdmin</span>
+            </div>
+            <button id="sidebar-toggle"
+                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div class="mt-6">
-            <h2 class="text-2xl font-semibold mb-4">Existing Programs</h2>
-            <div id="programs-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+
+        <nav class="mt-6">
+            <ul>
+                <li class="mb-2">
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 bg-blue-50 dark:bg-blue-900 border-r-4 border-blue-500">
+                        <i class="fas fa-tachometer-alt mr-3"></i>
+                        <span class="sidebar-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-book mr-3"></i>
+                        <span class="sidebar-text">Programs</span>
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-university mr-3"></i>
+                        <span class="sidebar-text">Universities</span>
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-users mr-3"></i>
+                        <span class="sidebar-text">Students</span>
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-cog mr-3"></i>
+                        <span class="sidebar-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="absolute bottom-0 w-full p-4 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex items-center">
+                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+                    A
+                </div>
+                <div class="ml-3 sidebar-text">
+                    <p class="text-sm font-medium">Admin User</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">admin@example.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold">Admin Dashboard</h1>
+                    <p class="text-gray-600 dark:text-gray-400">Manage educational programs and universities</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="logout-button"
+                        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 flex items-center">
+                        <i class="fas fa-sign-out-alt mr-2"></i>
+                        Logout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div id="stats-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <!-- Dynamic stats will be loaded here -->
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left Column - Add Program Form -->
+                <div class="lg:col-span-1">
+                    <div class="card p-6">
+                        <h2 class="text-2xl font-semibold mb-4">Add New Program</h2>
+                        <form id="add-program-form">
+                            <div class="mb-4">
+                                <label for="major" class="block text-gray-700 dark:text-gray-300 mb-2">Major</label>
+                                <input type="text" id="major" name="major" class="form-input w-full px-3 py-2 rounded"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="university" class="block text-gray-700 dark:text-gray-300 mb-2">University
+                                    Name</label>
+                                <input type="text" id="university" name="university"
+                                    class="form-input w-full px-3 py-2 rounded" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="curriculum"
+                                    class="block text-gray-700 dark:text-gray-300 mb-2">Curriculum</label>
+                                <textarea id="curriculum" name="curriculum" class="form-input w-full px-3 py-2 rounded"
+                                    required></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label for="duration"
+                                    class="block text-gray-700 dark:text-gray-300 mb-2">Duration</label>
+                                <input type="text" id="duration" name="duration"
+                                    class="form-input w-full px-3 py-2 rounded" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="tuition" class="block text-gray-700 dark:text-gray-300 mb-2">Tuition</label>
+                                <input type="text" id="tuition" name="tuition"
+                                    class="form-input w-full px-3 py-2 rounded" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="location"
+                                    class="block text-gray-700 dark:text-gray-300 mb-2">Location</label>
+                                <input type="text" id="location" name="location"
+                                    class="form-input w-full px-3 py-2 rounded" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact" class="block text-gray-700 dark:text-gray-300 mb-2">Contact</label>
+                                <input type="text" id="contact" name="contact"
+                                    class="form-input w-full px-3 py-2 rounded" required>
+                            </div>
+                            <button type="submit"
+                                class="btn-primary text-white px-4 py-2 rounded w-full flex items-center justify-center">
+                                <i class="fas fa-plus mr-2"></i>
+                                Add Program
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Programs List -->
+                <div class="lg:col-span-2">
+                    <div class="card p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-2xl font-semibold">Existing Programs</h2>
+                            <div class="flex space-x-2">
+                                <button class="bg-gray-200 dark:bg-gray-700 p-2 rounded">
+                                    <i class="fas fa-filter"></i>
+                                </button>
+                                <button class="bg-gray-200 dark:bg-gray-700 p-2 rounded">
+                                    <i class="fas fa-sort"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="programs-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Dynamic programs will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
+        // Theme toggle functionality
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+        });
+
+        // Sidebar toggle functionality
+        document.getElementById('sidebar-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+
+            // For mobile, we use expanded class instead
+            if (window.innerWidth <= 768) {
+                document.querySelector('.sidebar').classList.toggle('expanded');
+            }
+        });
+
         // Logout functionality
         document.getElementById('logout-button').addEventListener('click', async () => {
             const response = await fetch('/logout', { method: 'POST' });
@@ -166,7 +400,7 @@
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData);
 
-            const response = await fetch('/admin/programs', {
+            const response = await fetch('/programs', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -174,63 +408,130 @@
 
             if (response.ok) {
                 alert('Program added successfully!');
+                e.target.reset();
                 loadPrograms();
             } else {
                 alert('Failed to add program.');
             }
         });
 
-        // Load programs
-        async function loadPrograms() {
-            const response = await fetch('/programs');
-            const data = await response.json();
+        async function fetchStats() {
+            try {
+                const response = await fetch('/programs');
+                const data = await response.json();
 
-            const container = document.getElementById('programs-container');
-            container.innerHTML = '';
+                const statsContainer = document.getElementById('stats-container');
+                statsContainer.innerHTML = '';
 
-            Object.keys(data).forEach((major) => {
-                data[major].forEach((program) => {
-                    const programCard = document.createElement('div');
-                    programCard.className = 'card p-4';
+                const stats = [
+                    { label: 'Total Programs', value: Object.keys(data).length, icon: 'fas fa-book' },
+                    { label: 'Universities', value: new Set(Object.values(data).flat().map(p => p.university)).size, icon: 'fas fa-university' },
+                    { label: 'Students', value: '1,245', icon: 'fas fa-users' }, // Placeholder
+                    { label: 'New Applications', value: '36', icon: 'fas fa-file-alt' } // Placeholder
+                ];
 
-                    programCard.innerHTML = `
-                        <h3 class="text-xl font-bold mb-2">${program.university}</h3>
-                        <p class="text-gray-700 mb-2">${program.curriculum}</p>
-                        <p class="text-gray-700 mb-2">Duration: ${program.duration}</p>
-                        <p class="text-gray-700 mb-2">Tuition: ${program.tuition}</p>
-                        <p class="text-gray-700 mb-2">Location: ${program.location}</p>
-                        <p class="text-gray-700 mb-2">Contact: ${program.contact}</p>
-                        <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 delete-program" data-major="${major}" data-university="${program.university}">Delete</button>
+                stats.forEach(stat => {
+                    const statCard = document.createElement('div');
+                    statCard.className = 'stats-card card p-4';
+                    statCard.innerHTML = `
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm opacity-80">${stat.label}</p>
+                                <h3 class="text-2xl font-bold">${stat.value}</h3>
+                            </div>
+                            <div class="icon">
+                                <i class="${stat.icon} text-white"></i>
+                            </div>
+                        </div>
                     `;
-
-                    container.appendChild(programCard);
+                    statsContainer.appendChild(statCard);
                 });
-            });
+            } catch (error) {
+                console.error('Error fetching stats:', error);
+            }
+        }
 
-            // Add delete functionality
-            document.querySelectorAll('.delete-program').forEach((button) => {
-                button.addEventListener('click', async () => {
-                    const major = button.getAttribute('data-major');
-                    const university = button.getAttribute('data-university');
+        async function fetchPrograms() {
+            try {
+                const response = await fetch('/programs');
+                const data = await response.json();
 
-                    const response = await fetch('/admin/programs', {
-                        method: 'DELETE',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ major, university }),
+                const programsContainer = document.getElementById('programs-container');
+                programsContainer.innerHTML = '';
+
+                Object.keys(data).forEach(major => {
+                    data[major].forEach(program => {
+                        const programCard = document.createElement('div');
+                        programCard.className = 'program-card card p-4';
+                        programCard.innerHTML = `
+                            <div class="card-actions">
+                                <button class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 delete-program" data-major="${major}" data-university="${program.university}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="flex items-start mb-3">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3">
+                                    <i class="fas fa-university text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold">${program.university}</h3>
+                                    <span class="text-sm text-blue-500 bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">${major}</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300 mb-3">${program.curriculum}</p>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock text-gray-500 mr-2"></i>
+                                    <span>${program.duration}</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-dollar-sign text-gray-500 mr-2"></i>
+                                    <span>${program.tuition}</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-gray-500 mr-2"></i>
+                                    <span>${program.location}</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope text-gray-500 mr-2"></i>
+                                    <span class="truncate">${program.contact}</span>
+                                </div>
+                            </div>
+                        `;
+                        programsContainer.appendChild(programCard);
                     });
-
-                    if (response.ok) {
-                        alert('Program deleted successfully!');
-                        loadPrograms();
-                    } else {
-                        alert('Failed to delete program.');
-                    }
                 });
-            });
+
+                // Add delete functionality
+                document.querySelectorAll('.delete-program').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        const major = button.getAttribute('data-major');
+                        const university = button.getAttribute('data-university');
+
+                        if (confirm(`Are you sure you want to delete the program at ${university}?`)) {
+                            const response = await fetch('/admin/programs', {
+                                method: 'DELETE',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ major, university })
+                            });
+
+                            if (response.ok) {
+                                alert('Program deleted successfully!');
+                                fetchPrograms();
+                            } else {
+                                alert('Failed to delete program.');
+                            }
+                        }
+                    });
+                });
+            } catch (error) {
+                console.error('Error fetching programs:', error);
+            }
         }
 
         // Initial load
-        loadPrograms();
+        fetchStats();
+        fetchPrograms();
     </script>
 </body>
 
