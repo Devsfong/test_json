@@ -16,7 +16,7 @@
             --dark-bg: #0f172a;
             --light-card: #ffffff;
             --dark-card: #1e293b;
-            --light-text: #1e293b;
+            --light-text: #000103;
             --dark-text: #f1f5f9;
             --light-border: #e2e8f0;
             --dark-border: #334155;
@@ -27,7 +27,7 @@
             transition: all 0.4s ease;
         }
 
-        .light-mode {
+        body.light-mode {
             background-color: var(--light-bg);
             color: var(--light-text);
         }
@@ -43,6 +43,12 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             overflow: hidden;
+        }
+
+        .light-mode .card {
+            background-color: var(--light-card);
+            border: 1px solid var(--light-border);
+            color: black;
         }
 
         .dark-mode .card {
@@ -66,6 +72,12 @@
             transition: all 0.3s ease;
         }
 
+        .light-mode .form-input {
+            background-color: var(--light-card);
+            border: 1px solid var(--light-border);
+            color: var(--light-text);
+        }
+
         .dark-mode .form-input {
             background-color: #334155;
             border: 1px solid var(--dark-border);
@@ -82,9 +94,18 @@
             transition: all 0.3s ease;
         }
 
+        .light-mode .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
         .btn-primary:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
+        }
+
+        .light-mode .btn-primary:hover {
+            background-color: var(--primary-dark);
         }
 
         .loading {
@@ -115,9 +136,27 @@
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .dark-mode .sidebar {
-            background-color: var(--dark-card);
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        .sidebar.collapsed {
+            width: 70px;
+            /* Collapse to a smaller width */
+        }
+
+        .sidebar.collapsed .sidebar-text,
+        .sidebar.collapsed nav,
+        .sidebar.collapsed .absolute {
+            display: none;
+            /* Hide all elements except logo and toggle button */
+        }
+
+        .sidebar.collapsed .p-4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar.collapsed .p-4 i {
+            font-size: 1.5rem;
+            /* Adjust icon size */
         }
 
         .main-content {
@@ -125,73 +164,43 @@
             transition: all 0.3s ease;
         }
 
-        .sidebar.collapsed {
-            width: 70px;
-        }
-
         .sidebar.collapsed+.main-content {
             margin-left: 70px;
+            /* Adjust content margin when sidebar is collapsed */
         }
 
-        .sidebar.collapsed .sidebar-text {
-            display: none;
-        }
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 60px;
+                /* Adjust width for medium screens */
+            }
 
-        .program-card {
-            position: relative;
-        }
-
-        .program-card .card-actions {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .program-card:hover .card-actions {
-            opacity: 1;
-        }
-
-        .stats-card {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-        }
-
-        .stats-card .icon {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            .main-content {
+                margin-left: 60px;
+                /* Adjust content margin for medium screens */
+            }
         }
 
         @media (max-width: 768px) {
             .sidebar {
-                width: 70px;
-            }
-
-            .sidebar .sidebar-text {
-                display: none;
+                width: 50px;
+                /* Adjust width for small screens */
             }
 
             .main-content {
-                margin-left: 70px;
+                margin-left: 50px;
+                /* Adjust content margin for small screens */
             }
+        }
 
-            .sidebar.expanded {
-                width: var(--sidebar-width);
-            }
+        .light-mode .card {
+            color: black;
+            /* Ensure text on cards is black in light mode */
+        }
 
-            .sidebar.expanded .sidebar-text {
-                display: block;
-            }
-
-            .sidebar.expanded+.main-content {
-                margin-left: var(--sidebar-width);
-            }
+        .light-mode .sidebar-text {
+            color: black;
+            /* Ensure sidebar text is black in light mode */
         }
     </style>
 </head>
@@ -201,7 +210,7 @@
     <div class="sidebar">
         <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-700">
             <div class="flex items-center">
-                <i class="fas fa-graduation-cap text-xl text-blue-500 mr-2"></i>
+                <i class="fas fa-graduation-cap text-xl text-white mr-2"></i>
                 <span class="sidebar-text font-bold text-lg">EduAdmin</span>
             </div>
             <button id="sidebar-toggle"
@@ -471,11 +480,11 @@
                             </div>
                             <div class="flex items-start mb-3">
                                 <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3">
-                                    <i class="fas fa-university text-blue-500"></i>
+                                    <i class="fas fa-university text-white"></i>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold">${program.university}</h3>
-                                    <span class="text-sm text-blue-500 bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">${major}</span>
+                                    <span class="text-sm text-white bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">${major}</span>
                                 </div>
                             </div>
                             <p class="text-gray-700 dark:text-gray-300 mb-3">${program.curriculum}</p>

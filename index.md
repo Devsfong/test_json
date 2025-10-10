@@ -15,10 +15,8 @@
             align-items: flex-start;
             padding: 16px;
             gap: 12px;
-            width: 300px;
-            /* Set a fixed width for all cards */
-            height: 400px;
-            /* Set a fixed height for all cards */
+            width: 300px; /* Set a fixed width for all cards */
+            height: 400px; /* Set a fixed height for all cards */
             background: rgba(255, 255, 255, 0.1);
             /* Simple semi-transparent background */
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -65,8 +63,7 @@
 
         #cards-container {
             display: flex;
-            flex-wrap: wrap;
-            /* Allow cards to wrap */
+            flex-wrap: wrap; /* Allow cards to wrap */
             justify-content: center;
             gap: 16px;
         }
