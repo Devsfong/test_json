@@ -1,14 +1,6 @@
 {
     "Computer Science": [
         {
-            "university": "Institute of Technology of Cambodia (ITC)",
-            "curriculum": "Advanced Programming, Computer Architecture, Operating Systems",
-            "duration": "5 years",
-            "tuition": "$400/semester",
-            "location": "Phnom Penh",
-            "contact": "info@itc.edu.kh, +85523880381"
-        },
-        {
             "university": "Zaman University",
             "curriculum": "Software Development, Information Systems, IT Management",
             "duration": "4 years",
