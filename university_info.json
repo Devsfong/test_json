@@ -1,4 +1,14 @@
 {
+    "21": [
+        {
+            "university": "12",
+            "curriculum": "21",
+            "duration": "21",
+            "tuition": "21",
+            "location": "21",
+            "contact": "21"
+        }
+    ],
     "Computer Science": [
         {
             "university": "Zaman University",
