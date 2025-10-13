@@ -9,27 +9,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --secondary: #8b5cf6;
-            --light-bg: #f8fafc;
-            --dark-bg: #0f172a;
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary: #ffffff;
+            --light-bg: #F5F7FA;
+            --dark-bg: #111827;
             --light-card: #ffffff;
-            --dark-card: #1e293b;
-            --light-text: #000103;
-            --dark-text: #f1f5f9;
-            --light-border: #e2e8f0;
-            --dark-border: #334155;
-            --sidebar-width: 250px;
+            --dark-card: #1F2937;
+            --light-text: #111827;
+            --dark-text: #F9FAFB;
+            --light-border: #E5E7EB;
+            --dark-border: #374151;
+            --sidebar-width: 220px;
         }
 
         body {
             transition: all 0.4s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         body.light-mode {
             background-color: var(--light-bg);
             color: var(--light-text);
+        }
+
+        body.light-mode {
+            color: black;
+            /* Ensure all text in light mode is black */
+        }
+
+        .light-mode * {
+            color: black !important;
+            /* Override all text colors to black in light mode */
         }
 
         .dark-mode {
@@ -39,8 +50,8 @@
 
         .card {
             background-color: var(--light-card);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             overflow: hidden;
         }
@@ -53,35 +64,41 @@
 
         .dark-mode .card {
             background-color: var(--dark-card);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode .card:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .form-input {
-            background-color: var(--light-card);
+            background-color: var(--light-bg);
             border: 1px solid var(--light-border);
             color: var(--light-text);
             transition: all 0.3s ease;
+            font-size: 0.875rem;
         }
 
         .light-mode .form-input {
-            background-color: var(--light-card);
+            background-color: var(--light-bg);
             border: 1px solid var(--light-border);
             color: var(--light-text);
         }
 
         .dark-mode .form-input {
-            background-color: #334155;
+            background-color: #1F2937;
             border: 1px solid var(--dark-border);
             color: var(--dark-text);
+        }
+
+        .form-input::placeholder {
+            color: #9CA3AF;
+            opacity: 0.7;
         }
 
         .form-input:focus {
@@ -132,12 +149,12 @@
             left: 0;
             transition: all 0.3s ease;
             z-index: 100;
-            background-color: var(--light-card);
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-right: 1px solid var(--light-border);
         }
 
         .sidebar.collapsed {
-            width: 70px;
+            width: 60px;
             /* Collapse to a smaller width */
         }
 
@@ -202,15 +219,41 @@
             color: black;
             /* Ensure sidebar text is black in light mode */
         }
+
+        .stats-card {
+            border-left: 4px solid var(--primary);
+        }
+
+        .icon {
+            background-color: var(--primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .program-label {
+            background-color: #EEF2FF;
+            color: var(--primary) !important;
+            font-weight: 500;
+        }
+
+        .dark-mode .program-label {
+            background-color: #312E81;
+            color: #C7D2FE !important;
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="light-mode min-h-screen font-sans">
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar dark:bg-gray-900">
         <div class="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-700">
             <div class="flex items-center">
-                <i class="fas fa-graduation-cap text-xl text-white mr-2"></i>
+                <i class="fas fa-graduation-cap text-xl text-primary mr-2"></i>
                 <span class="sidebar-text font-bold text-lg">EduAdmin</span>
             </div>
             <button id="sidebar-toggle"
@@ -221,38 +264,38 @@
 
         <nav class="mt-6">
             <ul>
-                <li class="mb-2">
+                <li class="mb-1">
                     <a href="#"
-                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 bg-blue-50 dark:bg-blue-900 border-r-4 border-blue-500">
-                        <i class="fas fa-tachometer-alt mr-3"></i>
+                        class="flex items-center px-4 py-2.5 text-gray-700 dark:text-gray-200 bg-indigo-50 dark:bg-indigo-900 border-l-4 border-indigo-500 font-medium">
+                        <i class="fas fa-tachometer-alt w-5 text-center mr-3 text-indigo-600 dark:text-indigo-400"></i>
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="mb-2">
+                <li class="mb-1">
                     <a href="#"
-                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <i class="fas fa-book mr-3"></i>
+                        class="flex items-center px-4 py-2.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-book w-5 text-center mr-3 text-gray-500"></i>
                         <span class="sidebar-text">Programs</span>
                     </a>
                 </li>
-                <li class="mb-2">
+                <li class="mb-1">
                     <a href="#"
-                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <i class="fas fa-university mr-3"></i>
+                        class="flex items-center px-4 py-2.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-university w-5 text-center mr-3 text-gray-500"></i>
                         <span class="sidebar-text">Universities</span>
                     </a>
                 </li>
-                <li class="mb-2">
+                <li class="mb-1">
                     <a href="#"
-                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <i class="fas fa-users mr-3"></i>
+                        class="flex items-center px-4 py-2.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-users w-5 text-center mr-3 text-gray-500"></i>
                         <span class="sidebar-text">Students</span>
                     </a>
                 </li>
-                <li class="mb-2">
+                <li class="mb-1">
                     <a href="#"
-                        class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <i class="fas fa-cog mr-3"></i>
+                        class="flex items-center px-4 py-2.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-cog w-5 text-center mr-3 text-gray-500"></i>
                         <span class="sidebar-text">Settings</span>
                     </a>
                 </li>
@@ -261,7 +304,8 @@
 
         <div class="absolute bottom-0 w-full p-4 border-t border-gray-200 dark:border-gray-700">
             <div class="flex items-center">
-                <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+                <div
+                    class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-medium text-sm">
                     A
                 </div>
                 <div class="ml-3 sidebar-text">
@@ -276,18 +320,19 @@
     <div class="main-content">
         <div class="container mx-auto px-4 py-8">
             <!-- Header -->
-            <div class="flex justify-between items-center mb-6">
+            <div class="flex justify-between items-center mb-8">
                 <div>
-                    <h1 class="text-3xl font-bold">Admin Dashboard</h1>
-                    <p class="text-gray-600 dark:text-gray-400">Manage educational programs and universities</p>
+                    <h1 class="text-2xl font-semibold">Admin Dashboard</h1>
+                    <p class="text-gray-500 dark:text-gray-400">Manage educational programs and universities</p>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                <div class="flex items-center space-x-3">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:block"></i>
                     </button>
                     <button id="logout-button"
-                        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 flex items-center">
+                        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 flex items-center">
                         <i class="fas fa-sign-out-alt mr-2"></i>
                         Logout
                     </button>
@@ -307,46 +352,52 @@
                         <h2 class="text-2xl font-semibold mb-4">Add New Program</h2>
                         <form id="add-program-form">
                             <div class="mb-4">
-                                <label for="major" class="block text-gray-700 dark:text-gray-300 mb-2">Major</label>
-                                <input type="text" id="major" name="major" class="form-input w-full px-3 py-2 rounded"
-                                    required>
+                                <label for="major"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Major</label>
+                                <input type="text" id="major" name="major" placeholder="e.g., Computer Science"
+                                    class="form-input w-full px-3 py-2 rounded text-sm" required>
                             </div>
                             <div class="mb-4">
-                                <label for="university" class="block text-gray-700 dark:text-gray-300 mb-2">University
+                                <label for="university"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">University
                                     Name</label>
-                                <input type="text" id="university" name="university"
-                                    class="form-input w-full px-3 py-2 rounded" required>
+                                <input type="text" id="university" name="university" placeholder="e.g., MIT"
+                                    class="form-input w-full px-3 py-2 rounded text-sm" required>
                             </div>
                             <div class="mb-4">
                                 <label for="curriculum"
-                                    class="block text-gray-700 dark:text-gray-300 mb-2">Curriculum</label>
-                                <textarea id="curriculum" name="curriculum" class="form-input w-full px-3 py-2 rounded"
-                                    required></textarea>
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Curriculum</label>
+                                <textarea id="curriculum" name="curriculum"
+                                    placeholder="Brief description of the curriculum..."
+                                    class="form-input w-full px-3 py-2 rounded text-sm" rows="3" required></textarea>
                             </div>
                             <div class="mb-4">
                                 <label for="duration"
-                                    class="block text-gray-700 dark:text-gray-300 mb-2">Duration</label>
-                                <input type="text" id="duration" name="duration"
-                                    class="form-input w-full px-3 py-2 rounded" required>
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Duration</label>
+                                <input type="text" id="duration" name="duration" placeholder="e.g., 4 years"
+                                    class="form-input w-full px-3 py-2 rounded text-sm" required>
                             </div>
                             <div class="mb-4">
-                                <label for="tuition" class="block text-gray-700 dark:text-gray-300 mb-2">Tuition</label>
-                                <input type="text" id="tuition" name="tuition"
-                                    class="form-input w-full px-3 py-2 rounded" required>
+                                <label for="tuition"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tuition</label>
+                                <input type="text" id="tuition" name="tuition" placeholder="e.g., $50,000/year"
+                                    class="form-input w-full px-3 py-2 rounded text-sm" required>
                             </div>
                             <div class="mb-4">
                                 <label for="location"
-                                    class="block text-gray-700 dark:text-gray-300 mb-2">Location</label>
-                                <input type="text" id="location" name="location"
-                                    class="form-input w-full px-3 py-2 rounded" required>
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Location</label>
+                                <input type="text" id="location" name="location" placeholder="e.g., Boston, MA"
+                                    class="form-input w-full px-3 py-2 rounded text-sm" required>
                             </div>
                             <div class="mb-4">
-                                <label for="contact" class="block text-gray-700 dark:text-gray-300 mb-2">Contact</label>
+                                <label for="contact"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contact</label>
                                 <input type="text" id="contact" name="contact"
-                                    class="form-input w-full px-3 py-2 rounded" required>
+                                    placeholder="e.g., admissions@university.edu"
+                                    class="form-input w-full px-3 py-2 rounded text-sm" required>
                             </div>
                             <button type="submit"
-                                class="btn-primary text-white px-4 py-2 rounded w-full flex items-center justify-center">
+                                class="btn-primary text-white px-4 py-2 rounded-md w-full flex items-center justify-center transition-all">
                                 <i class="fas fa-plus mr-2"></i>
                                 Add Program
                             </button>
@@ -358,12 +409,18 @@
                 <div class="lg:col-span-2">
                     <div class="card p-6">
                         <div class="flex justify-between items-center mb-6">
-                            <h2 class="text-2xl font-semibold">Existing Programs</h2>
+                            <div class="flex items-center">
+                                <h2 class="text-lg font-semibold">Existing Programs</h2>
+                                <span class="ml-2 text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
+                                    id="program-count">0 programs</span>
+                            </div>
                             <div class="flex space-x-2">
-                                <button class="bg-gray-200 dark:bg-gray-700 p-2 rounded">
+                                <button
+                                    class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-md text-gray-600 dark:text-gray-300">
                                     <i class="fas fa-filter"></i>
                                 </button>
-                                <button class="bg-gray-200 dark:bg-gray-700 p-2 rounded">
+                                <button
+                                    class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-md text-gray-600 dark:text-gray-300">
                                     <i class="fas fa-sort"></i>
                                 </button>
                             </div>
@@ -409,7 +466,7 @@
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData);
 
-            const response = await fetch('/programs', {
+            const response = await fetch('/admin/programs', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -418,7 +475,8 @@
             if (response.ok) {
                 alert('Program added successfully!');
                 e.target.reset();
-                loadPrograms();
+                fetchPrograms();
+                fetchStats();
             } else {
                 alert('Failed to add program.');
             }
@@ -433,20 +491,24 @@
                 statsContainer.innerHTML = '';
 
                 const stats = [
-                    { label: 'Total Programs', value: Object.keys(data).length, icon: 'fas fa-book' },
-                    { label: 'Universities', value: new Set(Object.values(data).flat().map(p => p.university)).size, icon: 'fas fa-university' },
-                    { label: 'Students', value: '1,245', icon: 'fas fa-users' }, // Placeholder
-                    { label: 'New Applications', value: '36', icon: 'fas fa-file-alt' } // Placeholder
+                    { label: 'Total Programs', value: Object.keys(data).length, icon: 'fas fa-book', trend: '+12%' },
+                    { label: 'Universities', value: new Set(Object.values(data).flat().map(p => p.university)).size, icon: 'fas fa-university', trend: '+5%' },
+                    { label: 'Students', value: '1,245', icon: 'fas fa-users', trend: '+8%' }, // Placeholder
+                    { label: 'New Applications', value: '36', icon: 'fas fa-file-alt', trend: '-3%' } // Placeholder
                 ];
 
                 stats.forEach(stat => {
                     const statCard = document.createElement('div');
                     statCard.className = 'stats-card card p-4';
+                    const trendColor = stat.trend.startsWith('+') ? 'text-green-500' : 'text-red-500';
                     statCard.innerHTML = `
                         <div class="flex justify-between items-center">
                             <div>
-                                <p class="text-sm opacity-80">${stat.label}</p>
-                                <h3 class="text-2xl font-bold">${stat.value}</h3>
+                                <p class="text-sm text-gray-500">${stat.label}</p>
+                                <div class="flex items-center mt-1">
+                                    <h3 class="text-2xl font-bold">${stat.value}</h3>
+                                    <span class="ml-2 text-xs ${trendColor}">${stat.trend}</span>
+                                </div>
                             </div>
                             <div class="icon">
                                 <i class="${stat.icon} text-white"></i>
@@ -459,50 +521,55 @@
                 console.error('Error fetching stats:', error);
             }
         }
-
         async function fetchPrograms() {
             try {
                 const response = await fetch('/programs');
                 const data = await response.json();
-
                 const programsContainer = document.getElementById('programs-container');
                 programsContainer.innerHTML = '';
+
+                // Count total programs
+                let totalPrograms = 0;
+                Object.values(data).forEach(programs => {
+                    totalPrograms += programs.length;
+                });
+                document.getElementById('program-count').textContent = `${totalPrograms} program${totalPrograms !== 1 ? 's' : ''}`;
 
                 Object.keys(data).forEach(major => {
                     data[major].forEach(program => {
                         const programCard = document.createElement('div');
-                        programCard.className = 'program-card card p-4';
+                        programCard.className = 'program-card card p-5 relative border border-gray-200 rounded-lg shadow-sm';
                         programCard.innerHTML = `
-                            <div class="card-actions">
-                                <button class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 delete-program" data-major="${major}" data-university="${program.university}">
-                                    <i class="fas fa-trash"></i>
+                            <div class="absolute top-3 right-3">
+                                <button class="bg-red-500 text-white p-1.5 rounded-full hover:bg-red-600 delete-program" data-major="${major}" data-university="${program.university}">
+                                    <i class="fas fa-trash text-xs"></i>
                                 </button>
                             </div>
-                            <div class="flex items-start mb-3">
-                                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-3">
-                                    <i class="fas fa-university text-white"></i>
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-university text-indigo-600"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold">${program.university}</h3>
-                                    <span class="text-sm text-white bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">${major}</span>
+                                    <h3 class="text-lg font-semibold">${program.university}</h3>
+                                    <span class="text-xs program-label px-2 py-0.5 rounded-md inline-block mt-1">${major}</span>
                                 </div>
                             </div>
-                            <p class="text-gray-700 dark:text-gray-300 mb-3">${program.curriculum}</p>
-                            <div class="grid grid-cols-2 gap-2 text-sm">
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">${program.curriculum}</p>
+                            <div class="grid grid-cols-2 gap-3 text-sm">
                                 <div class="flex items-center">
-                                    <i class="fas fa-clock text-gray-500 mr-2"></i>
+                                    <i class="fas fa-clock text-gray-400 mr-2"></i>
                                     <span>${program.duration}</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <i class="fas fa-dollar-sign text-gray-500 mr-2"></i>
+                                    <i class="fas fa-dollar-sign text-gray-400 mr-2"></i>
                                     <span>${program.tuition}</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt text-gray-500 mr-2"></i>
+                                    <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
                                     <span>${program.location}</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <i class="fas fa-envelope text-gray-500 mr-2"></i>
+                                    <i class="fas fa-envelope text-gray-400 mr-2"></i>
                                     <span class="truncate">${program.contact}</span>
                                 </div>
                             </div>
@@ -537,7 +604,6 @@
                 console.error('Error fetching programs:', error);
             }
         }
-
         // Initial load
         fetchStats();
         fetchPrograms();
