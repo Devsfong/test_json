@@ -244,6 +244,41 @@
             background-color: #312E81;
             color: #C7D2FE !important;
         }
+
+        .sidebar-submenu {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-submenu li {
+            list-style: none;
+        }
+
+        .sidebar-submenu a {
+            display: block;
+            border-radius: 0.5rem;
+            padding: 0.65rem 0.85rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            border: 1px solid rgba(229, 231, 235, 0.6);
+        }
+
+        .sidebar-submenu a:hover {
+            background-color: rgba(79, 70, 229, 0.08);
+            transform: translateX(2px);
+        }
+
+        .dark-mode .sidebar-submenu a {
+            border-color: rgba(55, 65, 81, 0.7);
+            background-color: rgba(17, 24, 39, 0.35);
+        }
+
+        .dark-mode .sidebar-submenu a:hover {
+            background-color: rgba(129, 140, 248, 0.25);
+        }
+
+        .sidebar.collapsed .sidebar-submenu {
+            display: none;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -272,11 +307,21 @@
                     </a>
                 </li>
                 <li class="mb-1">
-                    <a href="#"
-                        class="flex items-center px-4 py-2.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <button id="sidebar-programs-toggle" type="button"
+                        class="w-full flex items-center px-4 py-2.5 text-left text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
                         <i class="fas fa-book w-5 text-center mr-3 text-gray-500"></i>
-                        <span class="sidebar-text">Programs</span>
-                    </a>
+                        <span class="sidebar-text flex-1">Programs</span>
+                        <span class="sidebar-text text-xs text-gray-500 dark:text-gray-400 mr-2"
+                            id="sidebar-program-count">0</span>
+                        <i class="sidebar-text fas fa-chevron-down text-xs transition-transform duration-200"
+                            id="sidebar-program-caret" aria-hidden="true"></i>
+                    </button>
+                    <ul id="sidebar-program-list"
+                        class="sidebar-submenu hidden space-y-1 text-sm text-gray-600 dark:text-gray-300"
+                        aria-hidden="true">
+                        <li class="sidebar-text text-xs italic text-gray-400 dark:text-gray-500">No programs available
+                            yet.</li>
+                    </ul>
                 </li>
                 <li class="mb-1">
                     <a href="#"
@@ -441,6 +486,24 @@
             document.body.classList.toggle('light-mode');
         });
 
+        const sidebarProgramsToggle = document.getElementById('sidebar-programs-toggle');
+        const sidebarProgramsList = document.getElementById('sidebar-program-list');
+        const sidebarProgramCaret = document.getElementById('sidebar-program-caret');
+
+        if (sidebarProgramsToggle && sidebarProgramsList) {
+            sidebarProgramsToggle.setAttribute('aria-expanded', 'false');
+
+            sidebarProgramsToggle.addEventListener('click', () => {
+                const willShow = sidebarProgramsList.classList.toggle('hidden');
+                const expanded = !willShow;
+                sidebarProgramsToggle.setAttribute('aria-expanded', expanded.toString());
+                sidebarProgramsList.setAttribute('aria-hidden', (!expanded).toString());
+                if (sidebarProgramCaret) {
+                    sidebarProgramCaret.classList.toggle('rotate-180', expanded);
+                }
+            });
+        }
+
         // Sidebar toggle functionality
         document.getElementById('sidebar-toggle').addEventListener('click', () => {
             document.querySelector('.sidebar').classList.toggle('collapsed');
@@ -533,10 +596,43 @@
                 Object.values(data).forEach(programs => {
                     totalPrograms += programs.length;
                 });
-                document.getElementById('program-count').textContent = `${totalPrograms} program${totalPrograms !== 1 ? 's' : ''}`;
+                const programCountLabel = document.getElementById('program-count');
+                if (programCountLabel) {
+                    programCountLabel.textContent = `${totalPrograms} program${totalPrograms !== 1 ? 's' : ''}`;
+                }
+
+                const sidebarProgramCount = document.getElementById('sidebar-program-count');
+                if (sidebarProgramCount) {
+                    sidebarProgramCount.textContent = totalPrograms;
+                }
+
+                const sidebarProgramList = document.getElementById('sidebar-program-list');
+                if (sidebarProgramList) {
+                    sidebarProgramList.innerHTML = '';
+
+                    if (totalPrograms === 0) {
+                        const emptyMessage = document.createElement('li');
+                        emptyMessage.className = 'sidebar-text text-xs italic text-gray-400 dark:text-gray-500';
+                        emptyMessage.textContent = 'No programs available yet.';
+                        sidebarProgramList.appendChild(emptyMessage);
+                    }
+                }
 
                 Object.keys(data).forEach(major => {
                     data[major].forEach(program => {
+                        if (sidebarProgramList) {
+                            const programItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.href = `view_programs.html?major=${encodeURIComponent(major)}&university=${encodeURIComponent(program.university)}`;
+                            link.className = 'sidebar-text block text-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2';
+                            link.innerHTML = `
+                                <div class="font-medium leading-tight">${program.university}</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${major}</div>
+                            `;
+                            programItem.appendChild(link);
+                            sidebarProgramList.appendChild(programItem);
+                        }
+
                         const programCard = document.createElement('div');
                         programCard.className = 'program-card card p-5 relative border border-gray-200 rounded-lg shadow-sm';
                         programCard.innerHTML = `

@@ -64,6 +64,10 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
+        .card.highlighted {
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.35), 0 18px 35px rgba(59, 130, 246, 0.25);
+        }
+
         .card::before {
             content: '';
             position: absolute;
@@ -176,12 +180,100 @@
             padding: 40px 20px;
         }
 
+        .filters-card {
+            background-color: var(--light-card);
+            border-radius: 20px;
+            box-shadow: 0 12px 25px rgba(59, 130, 246, 0.1);
+            padding: 24px;
+            margin-bottom: 32px;
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .dark-mode .filters-card {
+            background-color: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 12px 25px rgba(15, 23, 42, 0.4);
+        }
+
+        .filter-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #475569;
+        }
+
+        .dark-mode .filter-label {
+            color: #cbd5f5;
+        }
+
+        .filter-input,
+        .filter-select {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--light-border);
+            background-color: var(--light-bg);
+            color: var(--light-text);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-input:focus,
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .dark-mode .filter-input,
+        .dark-mode .filter-select {
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--dark-border);
+            color: var(--dark-text);
+        }
+
+        .meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            gap: 12px;
+        }
+
+        .meta-count {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .dark-mode .meta-count {
+            color: #e2e8f0;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 16px;
+            border: 1px dashed rgba(59, 130, 246, 0.3);
+            grid-column: 1 / -1;
+        }
+
+        .dark-mode .empty-state {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(148, 163, 184, 0.4);
+        }
+
         h1 {
             font-size: 3rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 16px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -234,6 +326,10 @@
             h1 {
                 font-size: 2.5rem;
             }
+
+            .filters-card {
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            }
         }
     </style>
 </head>
@@ -246,6 +342,40 @@
     <div class="container">
         <h1>University Programs</h1>
         <p class="subtitle">Discover the perfect academic path for your future career</p>
+        <div class="meta-bar">
+            <p class="meta-count" id="programs-count">Loading programs…</p>
+            <button id="reset-filters"
+                class="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors hidden">
+                Reset filters
+            </button>
+        </div>
+
+        <div class="filters-card">
+            <div>
+                <label class="filter-label" for="search-input">Search</label>
+                <input type="search" id="search-input" class="filter-input"
+                    placeholder="Search by major, university, or keyword" autocomplete="off">
+            </div>
+            <div>
+                <label class="filter-label" for="major-select">Major</label>
+                <select id="major-select" class="filter-select">
+                    <option value="">All majors</option>
+                </select>
+            </div>
+            <div>
+                <label class="filter-label" for="university-select">University</label>
+                <select id="university-select" class="filter-select">
+                    <option value="">All universities</option>
+                </select>
+            </div>
+            <div>
+                <label class="filter-label" for="location-select">Location</label>
+                <select id="location-select" class="filter-select">
+                    <option value="">All locations</option>
+                </select>
+            </div>
+        </div>
+
         <div id="cards-container">
             <!-- Cards will be dynamically inserted here -->
         </div>
@@ -290,42 +420,204 @@
             }
         });
 
-        // Fetch and display programs - YOUR ORIGINAL SCRIPT
-        async function loadPrograms() {
-            const response = await fetch('/programs');
-            const data = await response.json();
+        const cardsContainer = document.getElementById('cards-container');
+        const programsCount = document.getElementById('programs-count');
+        const resetFiltersBtn = document.getElementById('reset-filters');
+        const searchInput = document.getElementById('search-input');
+        const majorSelect = document.getElementById('major-select');
+        const universitySelect = document.getElementById('university-select');
+        const locationSelect = document.getElementById('location-select');
 
-            const container = document.getElementById('cards-container');
+        const urlParams = new URLSearchParams(window.location.search);
+        const highlightTarget = {
+            major: urlParams.get('major') ? decodeURIComponent(urlParams.get('major')) : '',
+            university: urlParams.get('university') ? decodeURIComponent(urlParams.get('university')) : ''
+        };
 
-            Object.keys(data).forEach((major) => {
-                data[major].forEach((program) => {
-                    const card = document.createElement('div');
-                    card.className = 'card';
+        let allPrograms = [];
 
-                    // Limit curriculum to 4 items
-                    const curriculumItems = program.curriculum.split(', ');
-                    const shortCurriculum = curriculumItems.slice(0, 4).join(', ') + (curriculumItems.length > 4 ? ', ...' : '');
-
-                    card.innerHTML = `
-                        <div class="card-content">
-                            <h2><i class="fas fa-university"></i> ${program.university}</h2>
-                            <p><strong>Program:</strong> ${major}</p>
-                            <p class="curriculum"><strong>Curriculum:</strong> ${shortCurriculum}</p>
-                            <p><strong>Tuition:</strong> ${program.tuition}</p>
-                            <p><strong>Location:</strong> ${program.location}</p>
-                            <p><strong>Contact:</strong> ${program.contact}</p>
-                        </div>
-                        <a href="details.html?program=${encodeURIComponent(major)}&university=${encodeURIComponent(program.university)}" class="see-more">
-                            See More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    `;
-
-                    container.appendChild(card);
+        function flattenPrograms(data) {
+            const items = [];
+            Object.entries(data).forEach(([major, programs]) => {
+                programs.forEach(program => {
+                    items.push({
+                        ...program,
+                        major
+                    });
                 });
+            });
+            return items.sort((a, b) => a.university.localeCompare(b.university));
+        }
+
+        function uniqueSorted(list, selector) {
+            return Array.from(new Set(list.map(selector).filter(Boolean))).sort((a, b) => a.localeCompare(b));
+        }
+
+        function populateSelect(select, values, placeholder) {
+            select.innerHTML = `<option value="">${placeholder}</option>`;
+            values.forEach(value => {
+                const option = document.createElement('option');
+                option.value = value;
+                option.textContent = value;
+                select.appendChild(option);
             });
         }
 
-        // Initial load
+        function formatCurriculum(text) {
+            if (!text) return 'Curriculum details coming soon.';
+            const items = text.split(/[,\n]+/).map(item => item.trim()).filter(Boolean);
+            if (items.length <= 4) {
+                return items.join(', ');
+            }
+            return `${items.slice(0, 4).join(', ')}, …`;
+        }
+
+        function renderPrograms(programs) {
+            cardsContainer.innerHTML = '';
+
+            if (programs.length === 0) {
+                cardsContainer.innerHTML = `
+                    <div class="empty-state">
+                        <p class="text-lg font-semibold mb-2">No programs match your filters yet.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Try adjusting the search or selecting a different major, university, or location.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            programs.forEach(program => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.dataset.major = program.major;
+                card.dataset.university = program.university;
+                card.dataset.location = program.location;
+
+                card.innerHTML = `
+                    <div class="card-content">
+                        <h2><i class="fas fa-university"></i> ${program.university}</h2>
+                        <p><strong>Program:</strong> ${program.major}</p>
+                        <p class="curriculum"><strong>Curriculum:</strong> ${formatCurriculum(program.curriculum)}</p>
+                        <p><strong>Duration:</strong> ${program.duration || 'N/A'}</p>
+                        <p><strong>Tuition:</strong> ${program.tuition || 'Contact for details'}</p>
+                        <p><strong>Location:</strong> ${program.location || 'N/A'}</p>
+                        <p><strong>Contact:</strong> ${program.contact || 'N/A'}</p>
+                    </div>
+                    <a href="details.html?program=${encodeURIComponent(program.major)}&university=${encodeURIComponent(program.university)}" class="see-more">
+                        See More <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+
+                cardsContainer.appendChild(card);
+            });
+        }
+
+        function updateCount(total, filtered) {
+            if (total === 0) {
+                programsCount.textContent = 'No programs available yet.';
+                return;
+            }
+            const difference = total === filtered ? '' : ` • showing ${filtered} result${filtered === 1 ? '' : 's'}`;
+            programsCount.textContent = `${total} total program${total === 1 ? '' : 's'}${difference}`;
+        }
+
+        function highlightProgram() {
+            if (!highlightTarget.major && !highlightTarget.university) return;
+            const cards = Array.from(cardsContainer.querySelectorAll('.card'));
+            const targetCard = cards.find(card => {
+                const matchesMajor = highlightTarget.major ? card.dataset.major === highlightTarget.major : true;
+                const matchesUniversity = highlightTarget.university ? card.dataset.university === highlightTarget.university : true;
+                return matchesMajor && matchesUniversity;
+            });
+
+            if (targetCard) {
+                targetCard.classList.add('highlighted');
+                setTimeout(() => {
+                    targetCard.classList.remove('highlighted');
+                }, 4000);
+                targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function applyFilters({ skipHighlight = false } = {}) {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            const selectedMajor = majorSelect.value;
+            const selectedUniversity = universitySelect.value;
+            const selectedLocation = locationSelect.value;
+
+            const filtered = allPrograms.filter(program => {
+                const matchesMajor = !selectedMajor || program.major === selectedMajor;
+                const matchesUniversity = !selectedUniversity || program.university === selectedUniversity;
+                const matchesLocation = !selectedLocation || program.location === selectedLocation;
+                const matchesSearch = !searchTerm || [
+                    program.major,
+                    program.university,
+                    program.location,
+                    program.curriculum,
+                    program.duration,
+                    program.tuition
+                ].some(field => field && field.toLowerCase().includes(searchTerm));
+
+                return matchesMajor && matchesUniversity && matchesLocation && matchesSearch;
+            });
+
+            renderPrograms(filtered);
+            updateCount(allPrograms.length, filtered.length);
+
+            const filtersActive = searchTerm || selectedMajor || selectedUniversity || selectedLocation;
+            resetFiltersBtn.classList.toggle('hidden', !filtersActive);
+
+            if (!skipHighlight) {
+                highlightProgram();
+            }
+        }
+
+        async function loadPrograms() {
+            try {
+                programsCount.textContent = 'Loading programs…';
+                const response = await fetch('/programs');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch programs');
+                }
+                const data = await response.json();
+                allPrograms = flattenPrograms(data);
+
+                populateSelect(majorSelect, uniqueSorted(allPrograms, item => item.major), 'All majors');
+                populateSelect(universitySelect, uniqueSorted(allPrograms, item => item.university), 'All universities');
+                populateSelect(locationSelect, uniqueSorted(allPrograms, item => item.location), 'All locations');
+
+                if (highlightTarget.major && Array.from(majorSelect.options).some(option => option.value === highlightTarget.major)) {
+                    majorSelect.value = highlightTarget.major;
+                }
+                if (highlightTarget.university && Array.from(universitySelect.options).some(option => option.value === highlightTarget.university)) {
+                    universitySelect.value = highlightTarget.university;
+                }
+
+                applyFilters({ skipHighlight: false });
+            } catch (error) {
+                console.error('Error loading programs:', error);
+                programsCount.textContent = 'Unable to load programs right now.';
+                cardsContainer.innerHTML = `
+                    <div class="empty-state">
+                        <p class="text-lg font-semibold mb-2">We ran into a problem loading programs.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Please refresh the page or try again in a few minutes.</p>
+                    </div>
+                `;
+            }
+        }
+
+        searchInput.addEventListener('input', () => applyFilters({ skipHighlight: true }));
+        majorSelect.addEventListener('change', () => applyFilters({ skipHighlight: true }));
+        universitySelect.addEventListener('change', () => applyFilters({ skipHighlight: true }));
+        locationSelect.addEventListener('change', () => applyFilters({ skipHighlight: true }));
+
+        resetFiltersBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            majorSelect.value = '';
+            universitySelect.value = '';
+            locationSelect.value = '';
+            applyFilters({ skipHighlight: true });
+        });
+
         loadPrograms();
     </script>
 </body>

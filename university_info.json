@@ -1,53 +1,14 @@
 {
-<<<<<<< HEAD
-  "Computer Science": [
-    {
-      "university": "Institute of Technology of Cambodia (ITC)",
-      "curriculum": "Advanced Programming, Computer Architecture, Operating Systems",
-      "duration": "5 years",
-      "tuition": "$400/semester",
-      "location": "Phnom Penh",
-      "contact": "info@itc.edu.kh, +85523880381"
-    },
-    {
-      "university": "Zaman University",
-      "curriculum": "Software Development, Information Systems, IT Management",
-      "duration": "4 years",
-      "tuition": "$1,000/semester",
-      "location": "Phnom Penh",
-      "contact": "info@zaman.edu.kh, +85570321456"
-    },
-    {
-      "university": "New University",
-      "curriculum": "Artificial Intelligence, Machine Learning, Cloud Computing",
-      "duration": "4 years",
-      "tuition": "$1,500/semester",
-      "location": "Phnom Penh",
-      "contact": "info@newuniversity.edu.kh, +85512345678"
-    }
-  ],
-  "Business Administration": [
-    {
-      "university": "Pannasastra University",
-      "curriculum": "Accounting, Marketing, Strategy, International Business",
-      "duration": "4 years",
-      "tuition": "$1,200/semester",
-      "location": "Phnom Penh",
-      "contact": "info@psu.edu.kh, +85598765432"
-    },
-    {
-      "university": "University of Cambodia",
-      "curriculum": "Business Management, Finance, Leadership, Entrepreneurship",
-      "duration": "4 years",
-      "tuition": "$800/semester",
-      "location": "Phnom Penh",
-      "contact": "info@uc.edu.kh, +85556789012"
-    }
-  ]
-}
-=======
     "21": [],
     "Computer Science": [
+        {
+            "university": "Institute of Technology of Cambodia (ITC)",
+            "curriculum": "Advanced Programming, Computer Architecture, Operating Systems",
+            "duration": "5 years",
+            "tuition": "$400/semester",
+            "location": "Phnom Penh",
+            "contact": "info@itc.edu.kh, +85523880381"
+        },
         {
             "university": "Zaman University",
             "curriculum": "Software Development, Information Systems, IT Management",
@@ -73,6 +34,14 @@
             "tuition": "$1,200/semester",
             "location": "Phnom Penh",
             "contact": "info@psu.edu.kh, +85598765432"
+        },
+        {
+            "university": "University of Cambodia",
+            "curriculum": "Business Management, Finance, Leadership, Entrepreneurship",
+            "duration": "4 years",
+            "tuition": "$800/semester",
+            "location": "Phnom Penh",
+            "contact": "info@uc.edu.kh, +85556789012"
         },
         {
             "university": "Build Bright University",
@@ -160,4 +129,3 @@
         }
     ]
 }
->>>>>>> b0718496db327468352c08900399a4475ed6378e

@@ -4,6 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const axios = require("axios");
+const fs = require("fs").promises;
 
 const app = express();
 const PORT = 3000;
@@ -13,6 +14,7 @@ const GITHUB_OWNER = "Devsfong";
 const GITHUB_REPO = "test_json";
 const FILE_PATH = "university_info.json";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const LOCAL_DATA_PATH = path.join(__dirname, "university_info.json");
 
 if (!GITHUB_TOKEN) {
   console.error("Error: GITHUB_TOKEN is not set in the environment variables.");
@@ -78,16 +80,54 @@ async function updateFileContent(newContent, sha) {
   }
 }
 
-// Load university data from GitHub
-async function loadData() {
-  const { content } = await getFileContent();
-  return JSON.parse(content);
+async function loadLocalData() {
+  try {
+    const file = await fs.readFile(LOCAL_DATA_PATH, "utf-8");
+    return JSON.parse(file);
+  } catch (error) {
+    console.error("Error reading local university data:", error.message);
+    throw error;
+  }
 }
 
-// Save university data to GitHub
+async function saveLocalData(data) {
+  await fs.writeFile(LOCAL_DATA_PATH, JSON.stringify(data, null, 4));
+}
+
+// Load university data with remote -> local fallback
+async function loadData() {
+  let remote;
+  try {
+    remote = await getFileContent();
+    const parsed = JSON.parse(remote.content);
+    await saveLocalData(parsed);
+    return parsed;
+  } catch (error) {
+    console.error(
+      "Error loading data from GitHub, falling back to local file:",
+      error.message
+    );
+    const localData = await loadLocalData();
+
+    if (remote?.sha) {
+      try {
+        await updateFileContent(JSON.stringify(localData, null, 4), remote.sha);
+        console.info("Remote data repaired using local backup.");
+      } catch (updateError) {
+        console.error("Failed to update remote data:", updateError.message);
+      }
+    }
+
+    return localData;
+  }
+}
+
+// Save university data to GitHub and local file
 async function saveData(data) {
   const { sha } = await getFileContent();
-  await updateFileContent(JSON.stringify(data, null, 4), sha);
+  const payload = JSON.stringify(data, null, 4);
+  await updateFileContent(payload, sha);
+  await saveLocalData(data);
 }
 
 // Routes
