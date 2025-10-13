@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "Computer Science": [
     {
       "university": "Institute of Technology of Cambodia (ITC)",
@@ -44,3 +45,119 @@
     }
   ]
 }
+=======
+    "21": [],
+    "Computer Science": [
+        {
+            "university": "Zaman University",
+            "curriculum": "Software Development, Information Systems, IT Management",
+            "duration": "4 years",
+            "tuition": "$1,000/semester",
+            "location": "Phnom Penh",
+            "contact": "info@zaman.edu.kh, +85570321456"
+        },
+        {
+            "university": "New University",
+            "curriculum": "Artificial Intelligence, Machine Learning, Cloud Computing",
+            "duration": "4 years",
+            "tuition": "$1,500/semester",
+            "location": "Phnom Penh",
+            "contact": "info@newuniversity.edu.kh, +85512345678"
+        }
+    ],
+    "Business Administration": [
+        {
+            "university": "Pannasastra University",
+            "curriculum": "Accounting, Marketing, Strategy, International Business",
+            "duration": "4 years",
+            "tuition": "$1,200/semester",
+            "location": "Phnom Penh",
+            "contact": "info@psu.edu.kh, +85598765432"
+        },
+        {
+            "university": "Build Bright University",
+            "curriculum": "Business Strategy, Corporate Finance, Marketing Management",
+            "duration": "4 years",
+            "tuition": "$750/semester",
+            "location": "Phnom Penh",
+            "contact": "info@bbu.edu.kh, +85523986666"
+        },
+        {
+            "university": "National University of Management",
+            "curriculum": "Business Administration, Project Management, Supply Chain",
+            "duration": "4 years",
+            "tuition": "$600/semester",
+            "location": "Phnom Penh",
+            "contact": "info@num.edu.kh, +85523880050"
+        },
+        {
+            "university": "Western University",
+            "curriculum": "Business Development, Financial Accounting, Operations Management",
+            "duration": "4 years",
+            "tuition": "$850/semester",
+            "location": "Phnom Penh",
+            "contact": "info@western.edu.kh, +85512876543"
+        },
+        {
+            "university": "CamEd Business School",
+            "curriculum": "Bachelor of Accounting and Finance program accredited for 4 years. Includes Financial Accounting, Management Accounting, Data Analysis, Marketing, Leadership, and Psychology.",
+            "duration": "4 years",
+            "tuition": "$2,819-$3,219 per semester (varies by year)",
+            "location": "Phnom Penh",
+            "contact": "Contact via website: cam-ed.edu.kh/contact"
+        }
+    ],
+    "Graphic Design": [
+        {
+            "university": "Pannasastra University",
+            "curriculum": "Digital Art, Visual Design, Typography, UX/UI Design",
+            "duration": "4 years",
+            "tuition": "$1,200/semester",
+            "location": "Phnom Penh",
+            "contact": "info@psu.edu.kh, +85598765432"
+        },
+        {
+            "university": "Norton University",
+            "curriculum": "Graphic Communication, Branding, Motion Graphics, Illustration",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton.edu.kh, +85523456789"
+        },
+        {
+            "university": "Royal University of Fine Arts",
+            "curriculum": "Visual Arts, Design Fundamentals, Digital Media, Photography",
+            "duration": "4 years",
+            "tuition": "$300/semester",
+            "location": "Phnom Penh",
+            "contact": "info@rufa.edu.kh, +85523986984"
+        },
+        {
+            "university": "Limkokwing University",
+            "curriculum": "Creative Multimedia, Advertising Design, Web Design",
+            "duration": "3 years",
+            "tuition": "$1,400/semester",
+            "location": "Phnom Penh",
+            "contact": "info@limkokwing.edu.kh, +85523991888"
+        }
+    ],
+    "test": [
+        {
+            "university": "test",
+            "curriculum": "eiwhewn",
+            "duration": "4 year",
+            "tuition": "1290",
+            "location": "Phnom Penh",
+            "contact": "929010938101"
+        },
+        {
+            "university": "1",
+            "curriculum": "1",
+            "duration": "1",
+            "tuition": "1",
+            "location": "Phnom Penh",
+            "contact": "1"
+        }
+    ]
+}
+>>>>>>> b0718496db327468352c08900399a4475ed6378e
