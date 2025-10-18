@@ -127,5 +127,15 @@
             "location": "Phnom Penh",
             "contact": "1"
         }
+    ],
+    "g": [
+        {
+            "university": "g",
+            "curriculum": "g",
+            "duration": "uggu",
+            "tuition": "ug",
+            "location": "ug",
+            "contact": "guug"
+        }
     ]
 }
