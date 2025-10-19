@@ -2,14 +2,6 @@
     "21": [],
     "Computer Science": [
         {
-            "university": "Zaman University",
-            "curriculum": "Software Development, Information Systems, IT Management",
-            "duration": "4 years",
-            "tuition": "$1,000/semester",
-            "location": "Phnom Penh",
-            "contact": "info@zaman.edu.kh, +85570321456"
-        },
-        {
             "university": "New University",
             "curriculum": "Artificial Intelligence, Machine Learning, Cloud Computing",
             "duration": "4 years",
