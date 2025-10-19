@@ -3,16 +3,7 @@
     "Computer Science": [],
     "Business Administration": [],
     "Graphic Design": [],
-    "test": [
-        {
-            "university": "1",
-            "curriculum": "1",
-            "duration": "1",
-            "tuition": "1",
-            "location": "Phnom Penh",
-            "contact": "1"
-        }
-    ],
+    "test": [],
     "g": [
         {
             "university": "g",
