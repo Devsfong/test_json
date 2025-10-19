@@ -3,14 +3,6 @@
     "Computer Science": [],
     "Business Administration": [
         {
-            "university": "Build Bright University",
-            "curriculum": "Business Strategy, Corporate Finance, Marketing Management",
-            "duration": "4 years",
-            "tuition": "$750/semester",
-            "location": "Phnom Penh",
-            "contact": "info@bbu.edu.kh, +85523986666"
-        },
-        {
             "university": "National University of Management",
             "curriculum": "Business Administration, Project Management, Supply Chain",
             "duration": "4 years",
