@@ -1,15 +1,6 @@
 {
     "21": [],
-    "Computer Science": [
-        {
-            "university": "New University",
-            "curriculum": "Artificial Intelligence, Machine Learning, Cloud Computing",
-            "duration": "4 years",
-            "tuition": "$1,500/semester",
-            "location": "Phnom Penh",
-            "contact": "info@newuniversity.edu.kh, +85512345678"
-        }
-    ],
+    "Computer Science": [],
     "Business Administration": [
         {
             "university": "Pannasastra University",
