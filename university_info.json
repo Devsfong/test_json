@@ -3,14 +3,6 @@
     "Computer Science": [],
     "Business Administration": [
         {
-            "university": "National University of Management",
-            "curriculum": "Business Administration, Project Management, Supply Chain",
-            "duration": "4 years",
-            "tuition": "$600/semester",
-            "location": "Phnom Penh",
-            "contact": "info@num.edu.kh, +85523880050"
-        },
-        {
             "university": "Western University",
             "curriculum": "Business Development, Financial Accounting, Operations Management",
             "duration": "4 years",
