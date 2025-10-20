@@ -16,5 +16,15 @@
             "location": "ih",
             "contact": "hiih"
         }
+    ],
+    "qqq": [
+        {
+            "university": "qqq",
+            "curriculum": "qqq",
+            "duration": "qq",
+            "tuition": "qq",
+            "location": "qq",
+            "contact": "qq"
+        }
     ]
 }
