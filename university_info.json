@@ -1,14 +1,6 @@
 {
     "Computer Science": [
         {
-            "university": "Royal University of Phnom Penh",
-            "curriculum": "Year 2: Data Communications (SCS202), Data Structures & Algorithms (SCS203), Database Systems (SCS204), C++ Programming (SCS205), Operating Systems (SCS206), Microprocessors (SCS207); Year 3: Statistics (SCS301), Computer Networks (SCS302), Visual Basic (SCS303), Internet Programming (SCS304), Information System Analysis & Design (SCS305), Computer Graphics (SCS306); Year 4: Java Programming (SCS401), Internet Programming II (SCS402), Object-Oriented Programming (SCS403), Simulations (SCS404), Unix System Management (SCS405), Software Engineering (SCS406), Management of Information Systems (SCS407), Project Management (SCS413)",
-            "duration": "4 years",
-            "tuition": "$500/semester",
-            "location": "Phnom Penh",
-            "contact": "info@rupp.edu.kh | +85512345678 | computer.info@rupp.edu.kh | +85517947377"
-        },
-        {
             "university": "Pannasastra University",
             "curriculum": "CS Foundations, Data Structures, Web Development, Mobile Apps",
             "duration": "4 years",
