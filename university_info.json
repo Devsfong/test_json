@@ -1,40 +1,894 @@
 {
-    "1": [
+    "Computer Science": [
         {
-            "university": "1",
-            "curriculum": "1",
-            "duration": "1",
-            "tuition": "1",
-            "location": "1",
-            "contact": "1"
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Year 2: Data Communications (SCS202), Data Structures & Algorithms (SCS203), Database Systems (SCS204), C++ Programming (SCS205), Operating Systems (SCS206), Microprocessors (SCS207); Year 3: Statistics (SCS301), Computer Networks (SCS302), Visual Basic (SCS303), Internet Programming (SCS304), Information System Analysis & Design (SCS305), Computer Graphics (SCS306); Year 4: Java Programming (SCS401), Internet Programming II (SCS402), Object-Oriented Programming (SCS403), Simulations (SCS404), Unix System Management (SCS405), Software Engineering (SCS406), Management of Information Systems (SCS407), Project Management (SCS413)",
+            "duration": "4 years",
+            "tuition": "$500/semester",
+            "location": "Phnom Penh",
+            "contact": "info@rupp.edu.kh | +85512345678 | computer.info@rupp.edu.kh | +85517947377"
+        },
+        {
+            "university": "Pannasastra University",
+            "curriculum": "CS Foundations, Data Structures, Web Development, Mobile Apps",
+            "duration": "4 years",
+            "tuition": "$1,200/semester",
+            "location": "Phnom Penh",
+            "contact": "info@psu.edu.kh | +85598765432"
+        },
+        {
+            "university": "Norton University",
+            "curriculum": "Programming, Networks, Database Systems, Cybersecurity",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton.edu.kh, +85523456789"
+        },
+        {
+            "university": "Institute of Technology of Cambodia (ITC)",
+            "curriculum": "Advanced Programming, Computer Architecture, Operating Systems",
+            "duration": "5 years",
+            "tuition": "$400/semester",
+            "location": "Phnom Penh",
+            "contact": "info@itc.edu.kh, +85523880381"
+        },
+        {
+            "university": "Zaman University",
+            "curriculum": "Software Development, Information Systems, IT Management",
+            "duration": "4 years",
+            "tuition": "$1,000/semester",
+            "location": "Phnom Penh",
+            "contact": "info@zaman.edu.kh, +85570321456"
         }
     ],
-    "21": [],
-    "Computer Science": [],
-    "Business Administration": [],
-    "Graphic Design": [],
-    "test": [],
-    "g": [],
-    "Testing": [],
-    "vydyusvudwyuv": [],
-    "visuth": [
+    "Business Administration": [
         {
-            "university": "123",
-            "curriculum": "yyy",
-            "duration": "yy",
-            "tuition": "y",
-            "location": "ih",
-            "contact": "hiih"
+            "university": "Pannasastra University",
+            "curriculum": "Accounting, Marketing, Strategy, International Business",
+            "duration": "4 years",
+            "tuition": "$1,200/semester",
+            "location": "Phnom Penh",
+            "contact": "info@psu.edu.kh | +85598765432"
+        },
+        {
+            "university": "University of Cambodia",
+            "curriculum": "Business Management, Finance, Leadership, Entrepreneurship",
+            "duration": "4 years",
+            "tuition": "$800/semester",
+            "location": "Phnom Penh",
+            "contact": "info@uc.edu.kh | +85556789012"
+        },
+        {
+            "university": "Norton University - Bachelor of Business Administration (BBA)",
+            "curriculum": "Foundation: Mathematics, Economics, Computer, Business Law. Core: Marketing, Management, Accounting, Statistics, Entrepreneurship. 6 Specializations: (1) Management - Leadership, Strategic Management, HRM, Project Management, Organizational Behavior, (2) Financial Accounting - Cost Accounting, Auditing, IFRS, Financial Analysis, Taxation, (3) Marketing & Branding - Brand Management, Consumer Behavior, E-Marketing, Sales Strategy, (4) Auditing - Financial Statement Auditing, International Auditing Standards, Operational Auditing, (5) Human Resource Management & Leadership - Labor Law, Training & Development, Conflict Management, Performance Management, (6) Fiscal Revenue & Taxation - Tax Law, Corporate Taxation, Tax Planning, Investment Management",
+            "duration": "4 years (Foundation + 3 years specialization)",
+            "tuition": "$950/semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075, +85593888569"
+        },
+        {
+            "university": "Build Bright University",
+            "curriculum": "Business Strategy, Corporate Finance, Marketing Management",
+            "duration": "4 years",
+            "tuition": "$750/semester",
+            "location": "Phnom Penh",
+            "contact": "info@bbu.edu.kh, +85523986666"
+        },
+        {
+            "university": "National University of Management",
+            "curriculum": "Business Administration, Project Management, Supply Chain",
+            "duration": "4 years",
+            "tuition": "$600/semester",
+            "location": "Phnom Penh",
+            "contact": "info@num.edu.kh, +85523880050"
+        },
+        {
+            "university": "Western University",
+            "curriculum": "Business Development, Financial Accounting, Operations Management",
+            "duration": "4 years",
+            "tuition": "$850/semester",
+            "location": "Phnom Penh",
+            "contact": "info@western.edu.kh, +85512876543"
+        },
+        {
+            "university": "CamEd Business School",
+            "curriculum": "Bachelor of Accounting and Finance program accredited for 4 years. Students study comprehensive business curriculum including: Financial Accounting (FA1), Management Accounting (MA1), Introduction to Data Analysis in Business (DAB), Marketing and Behavioral Economics (MBE), Introduction to Computer Science, Leadership (LEAD), Psychology (PSYC), English for Academic Purposes. Program complies with International Federation of Accountants (IFAC) standards, Ministry of Education requirements, and Cambodian National Qualification Framework. Students also earn international CAT (Certified Accounting Technician) qualification and may continue to ACCA qualification. Curriculum includes business fundamentals, analytical skills, leadership development, and professional certifications. Career opportunities in accounting, finance, business management, auditing, and financial analysis sectors.",
+            "duration": "4 years",
+            "tuition": "$2,819-$3,219 per semester (varies by year)",
+            "location": "64 Street 108, Sangkat Wat Phnom, Khan Daun Penh, Phnom Penh",
+            "contact": "Contact via website: cam-ed.edu.kh/contact"
+        },
+        {
+            "university": "National University of Management (NUM)",
+            "curriculum": "Business Management, Accounting, Finance, Marketing, Economics, Entrepreneurship, International Business, Public Administration, Tourism Management, Information Technology, Law, English for Business, Khmer for Business, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact NUM for details",
+            "location": "St. 96, Khan Daun Penh, Phnom Penh, Cambodia",
+            "contact": "info@num.edu.kh, +85523428485"
+        },
+        {
+            "university": "DDP Rule of Law Center",
+            "curriculum": "Dual Degrees in Economics, International Economics, Comparative Economics, Economic Research, Policy Analysis, Rule of Law, Human Rights, Internships, Exchange Programs.",
+            "duration": "4 years",
+            "tuition": "Contact DDP Rule of Law Center for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@ddprule.org"
         }
     ],
-    "qqq": [
+    "Graphic Design": [
         {
-            "university": "qqq",
-            "curriculum": "qqq",
-            "duration": "qq",
-            "tuition": "qq",
-            "location": "qq",
-            "contact": "qq"
+            "university": "Pannasastra University",
+            "curriculum": "Digital Art, Visual Design, Typography, UX/UI Design",
+            "duration": "4 years",
+            "tuition": "$1,200/semester",
+            "location": "Phnom Penh",
+            "contact": "info@psu.edu.kh | +85598765432"
+        },
+        {
+            "university": "Norton University",
+            "curriculum": "Graphic Communication, Branding, Motion Graphics, Illustration",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton.edu.kh, +85523456789"
+        },
+        {
+            "university": "Royal University of Fine Arts",
+            "curriculum": "Visual Arts, Design Fundamentals, Digital Media, Photography",
+            "duration": "4 years",
+            "tuition": "$300/semester",
+            "location": "Phnom Penh",
+            "contact": "info@rufa.edu.kh, +85523986984"
+        },
+        {
+            "university": "Limkokwing University",
+            "curriculum": "Creative Multimedia, Advertising Design, Web Design",
+            "duration": "3 years",
+            "tuition": "$1,400/semester",
+            "location": "Phnom Penh",
+            "contact": "info@limkokwing.edu.kh | +85523991888"
+        }
+    ],
+    "International Relations": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Diplomacy, Political Science, Economics, Global Affairs",
+            "duration": "4 years",
+            "tuition": "$500/semester",
+            "location": "Phnom Penh",
+            "contact": "info@rupp.edu.kh, +85512345678"
+        },
+        {
+            "university": "Pannasastra University",
+            "curriculum": "International Politics, Foreign Policy, International Law",
+            "duration": "4 years",
+            "tuition": "$1,200/semester",
+            "location": "Phnom Penh",
+            "contact": "info@psu.edu.kh, +85598765432"
+        },
+        {
+            "university": "University of Cambodia",
+            "curriculum": "International Studies, Comparative Politics, Regional Studies",
+            "duration": "4 years",
+            "tuition": "$800/semester",
+            "location": "Phnom Penh",
+            "contact": "info@uc.edu.kh, +85556789012"
+        },
+        {
+            "university": "Paragon International University",
+            "curriculum": "Global Diplomacy, International Organizations, Peace Studies",
+            "duration": "4 years",
+            "tuition": "$1,500/semester",
+            "location": "Phnom Penh",
+            "contact": "info@paragon.edu.kh, +85523966668"
+        }
+    ],
+    "Electrical Engineering": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Circuits, Electronics, Signals & Systems, Power Engineering",
+            "duration": "4 years",
+            "tuition": "$500/semester",
+            "location": "Phnom Penh",
+            "contact": "info@rupp.edu.kh, +85512345678"
+        },
+        {
+            "university": "Norton University - Electrical & Electronic Engineering",
+            "curriculum": "Energy Efficiency & Power Systems, Electronic Circuit Design, Telecommunications (Mobile & Immobile Systems), Automation & Control Systems, Robotics, Embedded Systems, Electronic Security. Specializations: Electricity (Power Supply & Networks), Electronics (Circuit Design & Security), Telecommunication (Signal Transmission & Maintenance), Automation & Control (Factory Systems & Robotics). Career: 100% job placement in factories, enterprises, ministries",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075, +85593888569"
+        },
+        {
+            "university": "Institute of Technology of Cambodia (ITC)",
+            "curriculum": "Electrical Systems, Control Engineering, Telecommunications",
+            "duration": "5 years",
+            "tuition": "$400/semester",
+            "location": "Phnom Penh",
+            "contact": "info@itc.edu.kh, +85523880381"
+        },
+        {
+            "university": "National Polytechnic Institute of Cambodia",
+            "curriculum": "Electric Power, Automation, Instrumentation, Renewable Energy",
+            "duration": "4 years",
+            "tuition": "$450/semester",
+            "location": "Phnom Penh",
+            "contact": "info@npic.edu.kh, +85523720771"
+        },
+        {
+            "university": "Build Bright University",
+            "curriculum": "Electrical Technology, Power Distribution, Industrial Electronics",
+            "duration": "4 years",
+            "tuition": "$750/semester",
+            "location": "Phnom Penh",
+            "contact": "info@bbu.edu.kh, +85523986666"
+        },
+        {
+            "university": "Norton University",
+            "curriculum": "Energy Efficiency & Power Systems, Electronic Circuit Design, Telecommunications, Automation & Control, Robotics, Embedded Systems",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com | +85523432075"
+        }
+    ],
+    "Data Science": [
+        {
+            "university": "Pannasastra University",
+            "curriculum": "Statistics, Python, Machine Learning, Big Data Analytics",
+            "duration": "4 years",
+            "tuition": "$1,200/semester",
+            "location": "Phnom Penh",
+            "contact": "info@psu.edu.kh, +85598765432"
+        },
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Data Mining, AI, Deep Learning, Data Visualization",
+            "duration": "4 years",
+            "tuition": "$500/semester",
+            "location": "Phnom Penh",
+            "contact": "info@rupp.edu.kh, +85512345678"
+        },
+        {
+            "university": "Norton University",
+            "curriculum": "Business Intelligence, Predictive Analytics, Statistical Modeling",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton.edu.kh, +85523456789"
+        },
+        {
+            "university": "Zaman University",
+            "curriculum": "Data Engineering, Cloud Computing, Database Management",
+            "duration": "4 years",
+            "tuition": "$1,000/semester",
+            "location": "Phnom Penh",
+            "contact": "info@zaman.edu.kh, +85570321456"
+        }
+    ],
+    "Architecture": [
+        {
+            "university": "Norton University",
+            "curriculum": "Architectural Design, Interior Design, Urban Planning, Landscape Design, Color and Sketching, Descriptive Geometry, Computer Graphic Design, Creative Concept, Principles of Management, English, Khmer Studies, Project Planning and Implementation, Professional Practice, Law and Rule of Construction, Sustainable Design, Basic Engineering, History of Architecture, Conservation, Thesis Writing and Methodology, Internship",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com | +85523432075 | 093888569 | 093888359"
+        }
+    ],
+    "Network Engineering": [
+        {
+            "university": "Norton University",
+            "curriculum": "Network Design, Cybersecurity, Cisco Technologies, Windows Server",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075"
+        }
+    ],
+    "Software Development": [
+        {
+            "university": "Norton University",
+            "curriculum": "Programming, Database Design, Mobile Development, Software Engineering",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075"
+        }
+    ],
+    "Information Technology": [
+        {
+            "university": "Norton University",
+            "curriculum": "IT Management, Systems Administration, Web Development, Cloud Computing",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075"
+        }
+    ],
+    "E-Commerce": [
+        {
+            "university": "Norton University",
+            "curriculum": "Online Business, Digital Marketing, Payment Systems, E-Commerce Platforms",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075"
+        }
+    ],
+    "Digital Design": [
+        {
+            "university": "Norton University",
+            "curriculum": "UI/UX Design, 3D Modeling, AR/VR, Interactive Media",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075"
+        }
+    ],
+    "Creative Multimedia": [
+        {
+            "university": "Norton University",
+            "curriculum": "Graphic Design, Photography, Animation, Film Production",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075"
+        }
+    ],
+    "Artificial Intelligence": [
+        {
+            "university": "Norton University",
+            "curriculum": "Machine Learning, Deep Learning, AI Systems, Neural Networks",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075"
+        }
+    ],
+    "Economics": [
+        {
+            "university": "Norton University - Bachelor of Economics",
+            "curriculum": "Foundation: Microeconomics, Macroeconomics, Statistics, Mathematics, Accounting, Business Principles. Core: SPSS, Research Methods, Taxation, Project Management. 4 Specializations: (1) Banking & Finance - Bank Management, Credit Management, Financial Markets, Investment Management, Corporate Finance, Risk Management for Banks, International Finance, (2) Development Economics - Agricultural Economics, Rural Development, Environmental Economics, Community Development, Urban Planning, ASEAN Economics, Econometrics, (3) Commercial Property & Real Estate - Real Estate Appraisal, Property Management, Real Estate Investment & Finance, Mortgage Lending, Real Estate Law, Real Estate Marketing & Brokerage, (4) Investment & Financial Risk Management - Security Analysis, Portfolio Management, Insurance & Risk Management, Financial Statement Analysis, Money & Capital Markets. Career: National Bank of Cambodia, Commercial Banks, Microfinance, NGOs, Government",
+            "duration": "4 years (Foundation + 3 years specialization)",
+            "tuition": "$950/semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075, +85593888569"
+        }
+    ],
+    "Law": [
+        {
+            "university": "Norton University - Bachelor of Laws (LLB)",
+            "curriculum": "School of Law and Government. 4 Specializations: (1) Commercial Law - Contract Law, Corporation Law, Agency & Partnership, Taxation, Banking & Finance Law, Intellectual Property, Competition Law, Consumer Protection, International Trade Law. Career: Professional Accounting, Business Management, International Trade, Industrial Relations. (2) Legal and Justice Studies - Law & Society Relations, Justice Principles, History & Politics, Environmental Law, Human Rights. Focus on understanding societal legal systems and justice implementation. (3) International Relations & Diplomacy - International Law Principles, Diplomatic Relations, Foreign Policy, International Security, Global Economics, Human Rights, Diplomatic Dispute Resolution. Career: Diplomatic Officials, Foreign Affairs Analysts, International Law Professionals, International Economists, Journalists. (4) Government & Public Administration - Government Structure, Cabinet & Prime Minister Jurisdiction, Ministry Operations, State Administration, Sub-national Administration Management, Public Finance, Personnel Management, Democratic Processes.",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075, Acting Head: +85512211126, Assistant: +85510667586"
+        },
+        {
+            "university": "American University of Phnom Penh (AUPP)",
+            "curriculum": "General Education (61 credits), Major & Major Electives (63 credits), Minor (15 credits). Courses include Cambodian law, United States law, Comparative law, International law, business law, contracts, criminal law, intellectual property, legal analysis, research, writing, negotiation, internships.",
+            "duration": "4 years",
+            "tuition": "See https://www.aupp.edu.kh/tuition-fees/",
+            "location": "#278H, Street 201R, Kroalkor Village, Sangkat Kilometer 6, Khan Russey Keo, Phnom Penh, Cambodia",
+            "contact": "info@aupp.edu.kh, +85523990023"
+        },
+        {
+            "university": "DDP Rule of Law Center",
+            "curriculum": "Dual Degrees in Law, International Law, Comparative Law, Legal Research, Legal Writing, Rule of Law, Human Rights, Internships, Exchange Programs.",
+            "duration": "4 years",
+            "tuition": "Contact DDP Rule of Law Center for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@ddprule.org"
+        }
+    ],
+    "Hospitality and Tourism Management": [
+        {
+            "university": "Norton University - School of Hospitality and Tourism Management",
+            "curriculum": "Multidisciplinary program preparing students for management, marketing, and operations in hospitality industry. Core areas: Food Services, Accommodations, Tourism Services. 2 Minor Specializations: (1) Eco-Tourism Management - Environmentally responsible travel, natural area conservation, cultural features appreciation, socio-economic involvement of local communities. Industry growing 10-30% annually. (2) Event Management - Project management for festivals, events, conferences. Brand studying, target audience identification, event concept development, logistics planning, technical coordination, post-event analysis, ROI assessment. Skills: Management expertise, Marketing, Operations, Commitment to service excellence. Career: Hotel management, restaurant operations, tourism services, event coordination, eco-tourism projects, hospitality industry management positions.",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075, +85593888569"
+        }
+    ],
+    "English": [
+        {
+            "university": "Norton University - College of Arts, Humanities and Languages (CAHL)",
+            "curriculum": "Norton University's English programs prepare students for ASEAN integration with comprehensive language training and specialized career paths. Program features: international faculty from multiple countries, focus on fluent English communication and specific professional skills to dominate regional workplaces, extra-curricular activities including English competitions, workshops with students from Australia, Japan, and Singapore, internship programs, study tours, and community service. Three specialized Bachelor of Arts programs: 1) B.A. in English for International Relations & Diplomacy (EIRD) - focuses on international security, political economy, diplomatic work, and negotiations; 2) B.A. in English for Business Affairs (EBA) - emphasizes report writing, presentations, marketing, negotiation, cross-cultural communication, and international business; 3) B.A. in English for Educational Management & Teaching (EMT) - covers teaching approaches, classroom observation, practice teaching, and school management. Career opportunities include diplomatic corps, international organizations, multinational corporations, NGOs, educational institutions, and regional business sectors.",
+            "duration": "4 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        },
+        {
+            "university": "Royal University of Phnom Penh - Institute of Foreign Languages",
+            "curriculum": "Programs: Foundation Year (Core English CE101–CE102 variants to reach CEFR B1), BA English (Core & Writing Skills WS101/WS102, CE201–CE202, CE301–CE302), B.Ed. TEFL track (Teaching Methodology TM401, Teaching Language Skills TLS401, Approaches & Methods AM401, Practicum TP402), BA in English for Professional Communication (Advanced English AE401–402, Proposal Writing PW401, Report Writing RW402), BA in English for International Business and BA in Translation & Interpreting (IB401, TI401–402). Course descriptions cover reading, writing, speaking, listening, research methods (RM301-302), materials development, assessment and practicum.",
+            "duration": "4 years (typical)",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "IFL Campus, Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Prof. Keuk Chan Narith - Head of Department - info.doe@rupp.edu.kh - Phone: (855) 23-885-419 - Office: IFL Campus"
+        }
+    ],
+    "Medicine": [
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS)",
+            "curriculum": "Norton University offers Doctor of Medicine (M.D.) program providing comprehensive medical education in General Medicine. The program focuses on medical practice and treatment with general characteristics for patients of all ages, including health education, disease prevention, control and monitoring of disease progression to improve human health. General Medicine practitioners treat acute and chronic illnesses and provide preventive care and health education to patients. The 8-year program prepares students to become general medical practitioners (not specialized doctors). Curriculum includes basic medical sciences, clinical rotations, patient care, diagnostic procedures, treatment protocols, and medical ethics. Students gain hands-on experience in hospitals and clinical settings under supervision of experienced physicians.",
+            "duration": "8 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        }
+    ],
+    "Dentistry": [
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS)",
+            "curriculum": "Norton University offers Doctor of Dentistry (D.D.S.) program, also known as Dental Medicine and Oral Medicine. Dentistry is a branch of medicine focused on the study of teeth, gingiva (gums), and oral cavity. The program consists of comprehensive training in study, diagnosis, prevention, management, and treatment of diseases, disorders, and conditions of the oral cavity, most commonly focused on the pathology of teeth and oral mucosa. Dentistry also encompasses other aspects of diseases, disorders, and conditions of the face and craniofacial complex, including the temporomandibular joint. The 7-year program includes theoretical studies in dental sciences, laboratory work, clinical practice, patient treatment, and specialized procedures in oral surgery, orthodontics, periodontics, endodontics, and prosthodontics.",
+            "duration": "7 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        }
+    ],
+    "Pharmacy": [
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS)",
+            "curriculum": "Norton University offers Bachelor of Pharmacy program for students who want to become pharmacists (also known as druggists or chemists). Pharmacy is a health care profession focusing on safe and effective medicine use. The program covers pharmaceutical sciences, focusing on the efficacy and safety of medication use. Students learn about different types of drugs including chemical substances, microbiological products, and herbal mixtures used in prevention and treatment of human and animal diseases, medical research, diagnosis, modification, and maintenance of organ functions. The 5-year curriculum includes pharmaceutical chemistry, pharmacology, pharmaceutics, medicinal chemistry, pharmacy practice, clinical pharmacy, drug interactions, medication therapy management, and patient counseling. Graduates work in community pharmacies, hospitals, pharmaceutical companies, research institutions, and regulatory agencies.",
+            "duration": "5 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        }
+    ],
+    "Nursing": [
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS) - Bachelor Degree",
+            "curriculum": "Norton University offers Bachelor of Nursing program, a profession within the health care sector focused on the care of individuals, families, and communities to help them attain, maintain, or recover optimal health and quality of life. The program is designed in accordance with the core competency framework for Cambodian professional nurses and the practice standards of Cambodian nurses. The 4-year curriculum includes nursing fundamentals, anatomy and physiology, medical-surgical nursing, pediatric nursing, maternal and child health, community health nursing, mental health nursing, nursing research, and clinical practice in various healthcare settings. Students develop skills in patient assessment, care planning, medication administration, health promotion, and therapeutic communication. Graduates work in hospitals, clinics, community health centers, schools, and other healthcare facilities.",
+            "duration": "4 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        },
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS) - Associate Degree",
+            "curriculum": "Norton University offers Associate Degree in Nursing, a 3-year program within the health care sector focused on the care of individuals, families, and communities. Students learn to provide care so that patients may attain, maintain, or recover optimal health and quality of life through treatment and health recovery. The associate degree program provides foundational nursing education including basic nursing skills, patient care, health assessment, medication administration, and clinical practice. This program prepares students for entry-level nursing positions and provides a pathway to advance to the Bachelor of Nursing program. Graduates can work as registered nurses in hospitals, clinics, and community health settings under appropriate supervision.",
+            "duration": "3 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        }
+    ],
+    "Midwifery": [
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS) - Bachelor Degree",
+            "curriculum": "Norton University offers Bachelor of Midwifery program, a health care profession in which providers offer specialized care to childbearing women. Midwives are specialists in providing care to women during pregnancy, labor and birth, and during the postpartum period, with the goal of improving the quality of life for mothers and babies. The 4-year program includes comprehensive training in prenatal care, labor and delivery management, postpartum care, newborn care, women's health, reproductive health, family planning, high-risk pregnancy management, and emergency obstetric care. Students gain extensive clinical experience in maternity wards, delivery rooms, and community health settings. Graduates work in hospitals, birthing centers, community health programs, and maternal-child health services.",
+            "duration": "4 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        },
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS) - Associate Degree",
+            "curriculum": "Norton University offers Associate Degree in Midwifery, a 3-year health care profession program for providers who offer care to childbearing women during pregnancy, labor and birth, and during the postpartum period. The program focuses on improving the quality of life for mothers and babies. Students learn essential midwifery skills including prenatal assessment, normal delivery assistance, postpartum care, newborn care, and maternal health education. The associate degree provides foundational midwifery education and prepares graduates for entry-level midwifery positions in hospitals, health centers, and community maternal health programs. Graduates can also continue to the Bachelor of Midwifery program for advanced training.",
+            "duration": "3 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        }
+    ],
+    "Medical Laboratory Technology": [
+        {
+            "university": "Norton University - Faculty of Health Sciences (FHS)",
+            "curriculum": "Norton University offers Associate Degree in Medical Laboratory Technology for students who want to become laboratory technicians. A laboratory technician is a person who, under the supervision of a medical technologist or physician, performs microscopic and bacteriologic tests of human blood, tissue, and fluids for diagnostic and research purposes. The program focuses on medical laboratory sciences, specializing in analysis of blood, tissues, various fluids and components in the body through research and examination to detect pathogens and assist in accurate diagnosis. The 3-year curriculum includes clinical chemistry, hematology, microbiology, immunology, blood banking, parasitology, laboratory equipment operation, quality control, safety procedures, and extensive hands-on laboratory practice. Graduates work in hospital laboratories, diagnostic centers, research facilities, and public health laboratories supporting physicians in disease diagnosis and patient care.",
+            "duration": "3 years",
+            "tuition": "$950 per semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +855 23 432 075"
+        }
+    ],
+    "Civil Engineering": [
+        {
+            "university": "Norton University",
+            "curriculum": "Structural Analysis, Reinforced Concrete Design, Steel Design, Construction Management, Road Construction, Bridge Construction, Hydraulics, Soil Mechanics, AutoCAD, Transportation Planning, Surveying, GIS and Remote Sensing. Specializations: Building Design & Construction, Bridge Design & Construction, Road Design & Construction, Hydraulic Structural Design & Construction",
+            "duration": "4 years",
+            "tuition": "$950/semester",
+            "location": "St. Keo Chenda, Chroy Changvar, Phnom Penh",
+            "contact": "info@norton-u.com, +85523432075, Dean: +85517687788"
+        },
+        {
+            "university": "Institute of Technology of Cambodia (ITC)",
+            "curriculum": "Structural Engineering, Geotechnical Engineering, Construction Materials, Hydraulic Engineering, Transportation Engineering",
+            "duration": "5 years",
+            "tuition": "$400/semester",
+            "location": "Phnom Penh",
+            "contact": "info@itc.edu.kh, +85523880381"
+        },
+        {
+            "university": "Build Bright University",
+            "curriculum": "Civil Construction, Structural Design, Project Management, Building Technology",
+            "duration": "4 years",
+            "tuition": "$750/semester",
+            "location": "Phnom Penh",
+            "contact": "info@bbu.edu.kh, +85523986666"
+        }
+    ],
+    "Information and Communication Engineering": [
+        {
+            "university": "Institute of Technology of Cambodia (ITC) - GIC Department",
+            "curriculum": "Comprehensive 5-year engineering program starting from 3rd year (Semester V) with complete curriculum. Core courses include: Algorithms and Programming, Combinational and Sequential Logics, Computer Architecture, Discrete Mathematics, Electronics, Information Systems Analysis and Design, Probability and Statistics. Advanced topics: Database Systems, Database Management Systems (SGBD), Networks, Operating Systems, Software Engineering, Telecommunication, Internet Programming, Human Computer Interaction, Compilation, Distributed Systems, Systems and Networks Administration. Specialized courses: Artificial Intelligence, Image Processing, IT Project Management, Modeling and Simulation, Network Security, Cloud Computing, Natural Language Processing, Research Methodology. Automata Theory, Theoretical Computer Science, MATLAB programming. Languages: English and French throughout program. Final year includes internship and research project. Program follows French education system with lectures (C), tutorials (TD), and practicals (TP). Total 96 credits over 10 semesters. Entrance exam covers mathematics, physics, chemistry, and logical reasoning. Top 1,500 students admitted annually. 80 scholarships available (5-year duration) for high-scoring students from Ministry of Education and ITC. Career opportunities in software development, network administration, systems engineering, AI research, cloud computing, cybersecurity, and IT project management.",
+            "duration": "5 years (10 semesters from Semester V-X)",
+            "tuition": "$400/semester",
+            "location": "Office 307F, Building F, Russian Conf. Blvd. Phnom Penh, Cambodia",
+            "contact": "itc.gicinfo@gmail.com, Tel: +855 023 5555 942, Fax: +855 23 880 369, Website: gic.itc.edu.kh"
+        }
+    ],
+    "Electrical and Energy Engineering": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Mathematics, Physics, Chemistry, Computer Programming, Electrical Circuits, Electronics, Power Systems, Renewable Energy, Energy Management, Engineering Design",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh",
+            "contact": "info@fe.rupp.edu.kh | +855 23 883 640"
+        }
+    ],
+    "Biology": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Year 1: Foundation studies & General Education; Year 2: Organic Chemistry (SBI201), Organic Chemistry Lab (SBI202), Cytology (SBI203), Invertebrate Zoology (SBI204) + Lab, Human Anatomy (SBI206), General Ecology (SBI207), Freshwater Ecology (SBI208), General Taxonomy (SBI219); Year 3: General Microbiology (SBI301) + Lab, Vertebrate Zoology (SBI303) + Lab, Plant Physiology (SBI312) + Lab, Plant Breeding (SBI309), Applied Zoology (SBI305), Project Proposal (SBI311); Year 4: Ethology (SBI401), Biometry (SBI412), Evolution (SBI413), Animal Embryology (SBI414), Molecular Cloning (SBI415), Vascular Plants (SBI416), Methodology of Research (SBI419), Training & Field Trips (SBI411), Thesis or Electives.",
+            "duration": "4 years",
+            "tuition": "N/A",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "biology.info@rupp.edu.kh | +855 23 883 640"
+        }
+    ],
+    "Chemistry": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Year 1-2: English Language III-IV, Organic Chemistry I (SCH201) + Lab (SCH214), Analytical Chemistry I (SCH202) + Lab (SCH203), Quantum Chemistry (SCH204), Physical Chemistry I (SCH211), Inorganic Chemistry I (SCH206) + Lab (SCH207), Elementary Statistics (SCH205), General Biology (SCH212); Year 3: Biochemistry I (SCH301), Advanced Organic Chemistry (SCH302), Physical Chemistry II (SCH303), Instrumental Methods (SCH304), Polymer Chemistry I (SCH308), Research Methods (SCH310); Year 4: Natural Compounds (SCH401), Food Chemistry (SCH409), Catalysis (SCH402), Laboratory Management (SCH410), Physical Organic Chemistry (SCH403), Inorganic Synthesis (SCH411), Organic Synthesis (SCH412), Surface Chemistry (SCH405), Agro-Chemistry (SCH406), Environmental Chemistry (SCH407), Seminar (SCH415), or Thesis (SCH416).",
+            "duration": "4 years",
+            "tuition": "N/A",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "chey.thavy@rupp.edu.kh | chemistry.info@rupp.edu.kh | +85516838379 | +855 23 883 640"
+        }
+    ],
+    "Environmental Science": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Year 2 (PUES/NRM): Introduction to the Environment (SES201), Environmental Chemistry I (SES202), Economics & Market Economy (SES203), Statistics I (SES204), Ecosystems Structures & Functions (SES205), Environmental Economics (SES208), Environmental Chemistry II (SES209), Environment & Sustainable Development (SES210), Statistics II & SPSS (SES211), Urban Environment (SES213), Marine Ecology/ Biogeography/ Agricultural Environment (varies by stream); Year 3: Fundamentals of GIS (SES301), Environmental Ethics (SES302), Environmental Policy & Regulation (SES303), Air Pollution (SES304), Solid Waste Management (SES305), Environmental Quality Management (SES306), Research Methodology (SES310), Environmental Impact Assessment (SES312), Water Quality Management (SES316), Vacation Internship (SES317); Year 4: Problem Based Learning (SES401), Population Environment & Development (SES409), Water Resource Systems & Management (SES410), Project Management & Planning with Environmental Considerations (SES403), Group Research (SES411), Thesis/Research Proposal (SES404), Waste Economy (SES405), Introduction to Cleaner Production (SES406), Thesis (SES412 for outstanding students)",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "kok.sothea@rupp.edu.kh | environment.info@rupp.edu.kh | +85578665066"
+        },
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Environmental Science, Ecology, Conservation, Pollution Control, Natural Resource Management, Climate Change, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Mathematics": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Core courses: General Analysis II-III (SMA202/SMA207), General Algebra II-III (SMA203/SMA208), Analytical Geometry (SMA205), Differential Geometry (SMA210), Linear Algebra I-II (SMA303/SMA308), Advanced Analysis (SMA302), Topology I-II (SMA301/SMA306), Probability & Statistics (SMA304/SMA309, SMA401/SMA406), Measure Theory (SMA402/SMA407), Numerical Analysis (SMA405/SMA410), Complex Variables (SMA307), Operations Research (SMA305/SMA310), Module Theory (SMA409), Banach Space Differentials (SMA403/SMA408)",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "mathematics.info@rupp.edu.kh | +85512875057"
+        }
+    ],
+    "Physics": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Year 2: English Language III-IV; Mathematics for Physics I (SPH201), Electrodynamics I (SPH202), Geometrical Optics I (SPH203), Thermodynamics I (SPH204), Modern Physics I (SPH205), Theoretical Mechanics I (SPH206), Electricity Circuit Analysis I (SPH207), Physics Lab II-I (SPH208); Year 3: English Language V-VI; Oscillation and Wave I (SPH301), Advanced Mathematics for Physics I (SPH302), Fluid Mechanics I (SPH303), Statistical Physics I (SPH304), Quantum Mechanics I (SPH305), Atomics and Molecular Physics I (SPH306), Renewable Energy and Electricity Generation (SPH307), Electronic Devices I (SPH308), Physics Lab III-I (SPH309); Year 4: Astrophysics I (SPH401), Communication System I (SPH402), Solid State Physics I (SPH403), Nuclear Physics (SPH404), Photonic and Laser Physics I (SPH405), Advanced Electronics and Designs I (SPH406), Physics Lab IV-I (SPH407), Renewable Energy Projects and Electrical Distribution (SPH414), Thesis/Or Project (SPH416)",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Dr. Khun Kimleang (Head of Department) - khun.kimleang@rupp.edu.kh | +85577485878 | Office Room 403 | 4th Floor | Campus I | RUPP"
+        }
+    ],
+    "Geography": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total credits: 137–138 (including 18 credits of English). Year 1 (30 credits): foundation and general courses; Year 2 (42 credits): core geography topics; Year 3 (36 credits): advanced regional and thematic geography; Year 4 (30 credits): fieldwork, projects, and electives. (See department curriculum page for year-level course breakdown.)",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Ms. Long Bunnath - bunnathlong@gmail.com | +85512858240 | Office Room #306 | Campus I"
+        }
+    ],
+    "History": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total credits: 148. The curriculum spans Year 2–4 with modules across historical periods, regional history, research methods, and electives; includes English language modules run by ELSU (variable codes ENG001–ENG412). (See department Curriculum page for year-level breakdown.)",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Ngin Vuth - Tel: (855) 89-486-116 / 12-844-527 | Office Room: Campus II | RUPP"
+        }
+    ],
+    "Khmer Literature": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total credits: 165. The program covers Khmer language and literature studies across Year 2–4 with courses in classical and modern literature, literary criticism, research methods, and electives. (See department Curriculum page for year-level breakdown.)",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Thea Sokmeng - Tel: (855) 12-894-494 | Office Room #304 | Campus I"
+        }
+    ],
+    "International Business Management": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Sample curriculum highlights (select courses across years): IBM111 Law and Policies for International Bus (3), IBM112 Business and Economic Environment (3), IBM113 Khmer and World History for Tourism (3), IBM114 ASEAN Study for Business & Tourism (2), IBM115 Business Computer Application (2), IBM116 General English 1 (4); Year 2: IBM121-IBM126 (Khmer and World Civilization, Statistics, Foundation of Management, International Relations, Foundation of International Business, General English 2); Years 3–4: advanced modules including Principles of Accounting (IBM211), Organizational Behaviour (IBM212), Consumer Behaviour (IBM213), Strategic Management (IBM221), Supply-Chain Management (IBM223), ICT for Business (IBM314), Research Methods (IBM311), Risk & Crisis Management (IBM321), Advanced Research Methods (IBM411), Thesis (IBM425, 12 credits) and electives. Total listed: 141 credits (at least 120 required).",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Room 317B, Main Campus (Building A), Russian Federation Blvd., Toul Kork, Phnom Penh",
+            "contact": "Dr. Phou Sambath - Head of Department - sambathphou@yahoo.com | +85578666779"
+        }
+    ],
+    "Linguistics": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total Credits: 138 (including Foundation Year). Foundation year is required. Selected courses (examples across years): Introduction to Linguistics (FGLI01), History of Khmer Linguistics (FGLI02), Writing Skills I (HLI201), Reading Skills (HLI202), Study of Middle Khmer (HLI203), Khmer Grammar (HLI204), Folk Linguistics (HLI205), Linguistic Theory (HLI210), Writing Skills II (HLI206), Speaking Skills (HLI207), Study of Angkorian and Pre-Angkorian Khmer (HLI208), Study of Pali and Sanskrit Words in Khmer (HLI209), Phonetics (HLI305), Phonology (HLI310), Psycholinguistics (HLI401), Introduction to Applied Linguistics (HLI402), Syntax (HLI403), Lexicology (HLI404), Semantics (HLI405), Sociolinguistics (HLI406), Corpus Linguistics (HLI407), Comparative Linguistics (HLI408), Philosophy of Language (HLI409), Internship/Or Thesis (HLI410 or Thesis 15 credits). See department Curriculum page for full year-by-year breakdown and course codes.",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Ms. Samreth Sothea - Head of Department - samreth.sothea@rupp.edu.kh | samrethsothea@yahoo.com - Tel: (855) 11874655 - Office: Room #219B | Campus I"
+        }
+    ],
+    "Media and Communication": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Minimum Requirement: 160 credits; 4-year program with year-by-year course progression (see department page for full course lists). Typical content areas include media theory, journalism, digital media production, broadcasting, film studies, communication research methods, advertising, public relations, and internships/fieldwork.",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Ung Bun Y - Head of Department - admin@dmc-cci.edu.kh - Tel & Fax: (+855) 23 88 44 08 - Office: Campus I | RUPP"
+        }
+    ],
+    "Philosophy": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "4-year program with year-by-year course progression (see department page for full lists). The program includes core philosophy modules, logic, ethics, history of philosophy, research methods, and electives; check the Curriculum page for YEAR TWO → YEAR FOUR breakdown.",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Nhim Bakngorn - Head of Department - nhim.bakngorn@rupp.edu.kh | nhimbakngorn@gmail.com - Tel: (855) 12 831 709 | Deputy HOD: Mr. Puth Sunphan - puth.sunphan@rupp.edu.kh - Tel: (855) 12 843 342 | Deputy HOD: Mrs. Mech Samphors - mech.samphors@rupp.edu.kh - Tel: (855) 12 581 106"
+        }
+    ],
+    "Psychology": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total Minimum Requirements: 132 credits; 4-year program with year-by-year course lists (Foundation/Year I through Year IV). Core areas include introductory psychology, developmental psychology, cognitive psychology, research methods, statistics, clinical and social psychology, and practicum/internship components.",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Phan ChanPeou - Head of Department - chanphan2002(at)yahoo.com - Tel: (855) 12 603 017 - Office: Room 310 | Building A"
+        }
+    ],
+    "Sociology": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total Minimum Requirements: 132 credits. Year I: 10 subjects = 30 credits; Year II: 12 subjects = 36 credits; Year III: 12 subjects = 36 credits; Year IV: 10 subjects = 30 credits. Core areas include social theory, research methods, sociology of development, gender studies, and practicum/fieldwork.",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Thy Naroeun | MA - Head of Department - info.dos@rupp.edu.kh - Mobile/Telegram: (855) 12-926-127 - Office: #110 | Campus II"
+        }
+    ],
+    "Social Work": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total Credits: 151 Credits (Including Foundation Year). Students are required to complete a Foundation Year. The program covers Year II-IV with core social work theory, social welfare policy, casework, community development, research methods, practicum/internship and electives. See department page for detailed year-by-year course lists.",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Ms. Ung Kimkanika - Head of Department - ung.kimkanika@rupp.edu.kh | Deputy: Mr. Phal Oudamsambath - phal.oudamsambath@rupp.edu.kh - Tel: (+855) 77-796-371 / (+855) 87-844-691 / (+855) 88-4088-813 - Office: Campus II"
+        }
+    ],
+    "Tourism": [
+        {
+            "university": "Royal University of Phnom Penh",
+            "curriculum": "Total Minimum Requirements: 161 Credits. Program includes Foundation Year plus Years II-IV covering tourism management, hospitality studies, sustainable tourism, tourism marketing, event management, tourism law and policy, field trips, and internship/practicum. See department Curriculum and Course Description pages for year-by-year course lists.",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mrs. Khun Chanmony - Head of Department - khun.chanmony@rupp.edu.kh | khmony@yahoo.com - Tel: (855) 12 477 704 - Office: Campus I | Room 108"
+        }
+    ],
+    "Foundation Year": [
+        {
+            "university": "Royal University of Phnom Penh - Faculty of Development Studies",
+            "curriculum": "Foundation Year required for many programs. Typical Foundation Year courses (with codes and credits where available): English Language I (FGEN01) 4(6-0), English Language II (FGEN02) 4(6-0), General and Applied Math (FGEN04) 2(2-0), Introduction to Sociology (FGCS01) 2(2-0), Study Skills I (FESS01) 3(2-0), Study Skills II (FGSS02) 2(2-0), Cambodian History (FGHI01) 2(2-0), Khmer Culture and Civilization (FGKL02) 2(2-0), Introduction to Environment (FGES01) 2(2-0), Computer Applications (FGCS01) 2(2-0), Introduction to Philosophy (FGPP01) 2(2-0), Introduction to Development Studies (FEDS01) 3(3-0). Note: courses with * are considered major courses; check the Foundation Year page for full table and notes.",
+            "duration": "1 year (Foundation)",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on foundation page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Dean: Dr. Rath Sethik - rath.sethik@rupp.edu.kh - Tel: (+855)12 556 579 | Vice Dean: Dr. Heng Naret - heng.naret@rupp.edu.kh - Tel: (+855)12 830 386 | Dr. Seak Sophat - seak.sophat@rupp.edu.kh - Tel: (+855)16 506 888 | Mr. Choeun Kimseng - kimseng.choeun@rupp.edu.kh - Tel: (+855)78 889 488"
+        }
+    ],
+    "Faculty of Education - Departments": [
+        {
+            "university": "Royal University of Phnom Penh - Faculty of Education",
+            "curriculum": "Departments: Department of Educational Studies; Department of Higher Education Development and Management; Department of Lifelong Learning; Center for Educational Research and Training. Each department provides undergraduate majors and learning outcomes; see department pages for full descriptions and learning outcomes.",
+            "duration": "Varies by program (typically 4 years)",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on faculty page)",
+            "location": "Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Dean: Prof. Sok Soth - sok.soth@rupp.edu.kh - Tel: +855 77 608 250 | Faculty website: https://fed.rupp.edu.kh/"
+        }
+    ],
+    "Chinese": [
+        {
+            "university": "Royal University of Phnom Penh - Institute of Foreign Languages",
+            "curriculum": "Total Minimum Requirements: 120. Year One (Foundation Year) sample courses: Chinese Intensive I (ICH101) 3(3-0); Chinese Listening I (ICH102) 1.5(1.5-0); Chinese Speaking I (ICH103) 3(3-0); Pronunciation I (ICH104) 1.5(1.5-0); Chinese Intensive II (ICH105) 3(3-0); Chinese Speaking II (ICH106) 1.5(1.5-0); Chinese Reading I (ICH107) 3(3-0); Chinese Listening II (ICH108) 1.5(1.5-0). Years Two–Four include advanced language modules, specialized tracks (e.g., economics, tourism), practice/internship and collaborative modes with partner universities (see department Curriculum page for full year-by-year tables).",
+            "duration": "4 years",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "IFL Campus E Building, 3rd Floor, Room 319, Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Ith Sothea - Head of Department - ith.sothea@rupp.edu.kh - Tel: +855-17771468 - Fax: +855-23-881-087 | Ms. Zhou Liyuan - liyunjoe@yahoo.com.cn - Tel: +855 010 683 200"
+        }
+    ],
+    "French": [
+        {
+            "university": "Royal University of Phnom Penh - Institute of Foreign Languages",
+            "curriculum": "Bachelor of Arts in French: Major courses in French writing, listening and reading skills; integrated language practice; French literature and linguistics; academic work methodology. Elective streams include Teaching French as a Foreign Language (methodologies, internship & report) and Translation (computer-assisted translation, interpretation intro, technical translation, terminology and documentary workshop, literary translation and translation practice). Program prepares students for DELF (CEFR B1) and includes practical internships.",
+            "duration": "4 years (typical)",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "IFL Campus, Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. MAO Bunneang - Head of Department - bunneang.mao@gmail.com - Tel: (+855) 12 844 336 | Deputy HODs: Mr. KIM Vuthy - vuthykimdef@yahoo.fr - (+855) 12 294 769 | Dr. SOK Limsrorn - soklimsrorn@gmail.com - (+855) 12 316 846"
+        }
+    ],
+    "Japanese": [
+        {
+            "university": "Royal University of Phnom Penh - Institute of Foreign Languages",
+            "curriculum": "Program includes Foundation-year subjects (Khmer-based general education) and skilled Japanese language subjects: Introduction to Japanese, Fundamental Japanese, Computer and Japanese, Japanese Grammar (I–IV), Conversation (I–IV), Listening (I–IV), Reading (I–VI), Kanji (I–IV), Composition (I–IV), Presentation & Discussion, Japanese Circumstances, Research on Japan (Thesis), Japanese for Current Topics, Studies of Japanese Society, Practicum, Translation & Interpretation, Japanese Literature, Japanese for Business. Courses run across Years I–IV with practicals and internships.",
+            "duration": "4 years (typical)",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "IFL Campus, Royal University of Phnom Penh, Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Mr. Kim Nipiseth - Head of Department - kim.nipiseth@rupp.edu.kh | Deputy HOD: Mr. Un Tevanda - untevanda@rupp.edu.kh | Tel: (855) 23-885-419"
+        }
+    ],
+    "Korean": [
+        {
+            "university": "Royal University of Phnom Penh - Institute of Foreign Languages",
+            "curriculum": "B.A. Course: Year 2 begins formal study of Korean language from beginner to low-intermediate; develops grammar, speaking, listening, reading, writing and cultural understanding. Key modules: Grammar I–II; Speaking I–II; Listening I–II; Reading I–II; Composition I–II; Speech I–II; Introduction to Korean Society & Culture. Year 3 focuses on intermediate skills (Grammar III–IV, Speaking III–IV, Listening III–IV, Reading III–IV, Composition III–IV, Speech III–IV), Ancient & Modern History of Korea, Chinese Characters in Korean I–II. Year 4 includes Academic Korean, Korean for Mass Communication I–II, Presentation & Discussion, Linguistics, Korean Literature, Teaching Methodology, Business Korean I, Translation, Practicum, and Academic Writing for Thesis.",
+            "duration": "4 years (typical)",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "IFL Campus, Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Program Coordinator: Ms. OUM PONIKA - Tel: (855) 89 598 008 - Email: ponikaoum@hotmail.com - Office: Room #324 | IFL Campus"
+        }
+    ],
+    "Thai": [
+        {
+            "university": "Royal University of Phnom Penh - Institute of Foreign Languages",
+            "curriculum": "Course sequence (sample): ITH101 Elementary Thai I 3 (3-0); ITH102 Elementary Thai listening & speaking 3 (3-0); ITH103 Elementary Reading Thai 3 (3-0); ITH104 Elementary Thai II 3 (3-0); ITH105 Listening & Speaking in Daily Life 3 (3-0); ITH106 Elementary Writing Thai 3 (3-0); ITH201 Intermediate Thai I 3 (3-0); ITH202 Public Speaking 3 (3-0); ITH203 Reading printed & electronic media 3 (3-0); ITH204 Thai Grammar I 3 (3-0); ITH205 Linguistics for studying Thai 3 (3-0); ITH206 Intermediate Thai II 3 (3-0); ITH207 Academic Reading 3 (3-0); ITH208 Writing Thai for Business & Academic Terms 3 (3-0); ITH209 Thai Grammar II 3 (3-0); ITH210 Foreign Language in Thai Language 3 (3-0); Advanced/Year 3-4 samples: ITH301-ITH310 (Advanced Thai, Academic Speaking, Creative Writing, Thai Literature, Thai for Business/IT/Translation), ITH401-ITH408 (Translation, Interpretation, Teaching, IT applications, Research, Seminar, Practicum).",
+            "duration": "4 years (typical)",
+            "tuition": "Check RUPP Admissions / Ministry (not listed on department page)",
+            "location": "IFL Campus, Royal University of Phnom Penh, Russian Federation Blvd, Toul Kork, Phnom Penh, Cambodia",
+            "contact": "Head of Department: Mr. Hem Samphos - Tel: (855) 23-885-419 - Email: hem.samphos@rupp.edu.kh / samphos77@gmail.com - Office: IFL Campus"
+        }
+    ],
+    "Agriculture": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Agronomy, Animal Science, Agricultural Engineering, Food Science, Rural Development, Environmental Science, Agribusiness, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Veterinary Medicine": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Veterinary Medicine, Animal Health, Pathology, Surgery, Pharmacology, Animal Nutrition, Public Health, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Forestry": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Forestry, Forest Management, Conservation, Ecology, Silviculture, Environmental Science, Agroforestry, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Fisheries": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Fisheries Science, Aquaculture, Marine Biology, Fish Health, Water Resources, Environmental Science, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Agro-Industry": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Agro-Industry, Food Technology, Food Processing, Quality Control, Agribusiness, Environmental Science, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Land Management": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Land Management, Land Use Planning, Surveying, GIS, Environmental Science, Urban Planning, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Agricultural Economics": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Agricultural Economics, Agribusiness, Rural Development, Policy Analysis, Environmental Economics, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Rural Development": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Rural Development, Community Development, Agricultural Extension, Social Science, Project Management, Policy Analysis, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Agricultural Extension": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Agricultural Extension, Communication, Community Development, Training Methods, Project Management, Policy Analysis, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Food Science": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Food Science, Food Technology, Nutrition, Food Safety, Quality Control, Food Processing, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Water Resources": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Water Resources, Hydrology, Irrigation, Water Management, Environmental Science, Climate Change, Project Work, Internship opportunities.",
+            "duration": "4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
+        }
+    ],
+    "Postgraduate Programs": [
+        {
+            "university": "Royal University of Agriculture (RUA)",
+            "curriculum": "Master's and PhD programs in Agronomy, Animal Science, Agricultural Engineering, Food Science, Rural Development, Environmental Science, Agribusiness, Agricultural Economics, Project Work, Research, Internship opportunities.",
+            "duration": "2-4 years",
+            "tuition": "Contact RUA for details",
+            "location": "Phnom Penh, Cambodia",
+            "contact": "info@rua.edu.kh, +855 23 219 829"
         }
     ]
 }
