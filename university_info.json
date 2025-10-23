@@ -1,14 +1,6 @@
 {
     "Computer Science": [
         {
-            "university": "Pannasastra University",
-            "curriculum": "CS Foundations, Data Structures, Web Development, Mobile Apps",
-            "duration": "4 years",
-            "tuition": "$1,200/semester",
-            "location": "Phnom Penh",
-            "contact": "info@psu.edu.kh | +85598765432"
-        },
-        {
             "university": "Norton University",
             "curriculum": "Programming, Networks, Database Systems, Cybersecurity",
             "duration": "4 years",
